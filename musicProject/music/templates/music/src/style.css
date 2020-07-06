@@ -1,0 +1,121 @@
+body{
+    display: grid;
+    font-family: "G마켓 산스", helvetica, "Apple SD Gothic Neo", sans-serif;
+    align-content: center;
+    background: rgb(59, 63, 117);
+}
+
+.content{
+    display: grid;
+    width: 800px;
+    padding: 30px;
+    margin: auto;
+    color: honeydew;
+    grid-template-rows: 150px 80px auto;
+}
+
+.title{
+    color: whitesmoke;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.sub-title{
+    color:gray;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 10px;
+}
+
+.number-of-songs{
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.song-list{
+    display: grid;
+    row-gap: 20px;
+}
+
+.song-template{
+    display: flex;
+    height: 85px;
+    background-color: rgb(12, 12, 12);
+    border-radius: 10px;
+}
+
+img{
+    width: 85px;
+    height: 85px;
+    border-radius: 10px;
+}
+
+.cover{
+    width: 85px;
+    height: 85px;
+}
+
+.song-info{
+    display: grid;
+    grid-template-rows: 3fr 2fr;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.song-title{
+    font-size: 24px;
+    font-weight: bold;
+    height: 45px;
+    line-height: 45px;
+    color: #e6e3e3;
+}
+
+.artist{
+    font-size: 15px;
+    font-weight: normal;
+    color: #b1b0b0;
+    height: 30px;
+    line-height: 30px;
+}
+
+.more{
+    display: flex;
+}
+
+.album{
+    font-size: 13px;
+    font-weight: lighter;
+    padding-left: 10px;
+    padding-top: 9px;
+    color: #797979;
+}
+
+.form{
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    column-gap: 10px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input[type="text"] {
+    font-family: "G마켓 산스";
+    font-size: 40px;
+    height: 60px;
+    color: #e6e3e3;
+    background-color: rgb(59, 63, 117);
+    border: none;
+    outline: rgb(59, 63, 117);
+    transition: background-color .3s;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  input[type="text"]:hover{
+      background-color: rgb(42, 45, 83);
+  }
