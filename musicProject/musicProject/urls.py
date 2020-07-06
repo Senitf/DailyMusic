@@ -20,4 +20,5 @@ import music.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', music.views.home, name="home"),
+    path('upload/', music.views.uploadNewMusic, name="uploadNewMusic"),
 ]
