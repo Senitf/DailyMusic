@@ -15,10 +15,12 @@
         </div>
 
         <div class="info">
-            <input type="text" placeholder="제목을 입력하라 이말이야" id="title">
-            <input type="text" placeholder="누가 불렀는지도 알아야한다 이말이야" id="artist">
-            <input type="text" placeholder="앨범명도 알고싶다 이말이야" id="album">
-
+            <form action = "{% url 'create' %}">
+                <input type="text" placeholder="제목을 입력하라 이말이야" id="title" name = 'title'>
+                <input type="text" placeholder="누가 불렀는지도 알아야한다 이말이야" id="artist" name = 'artist'>
+                <input type="text" placeholder="앨범명도 알고싶다 이말이야" id="album" name = 'album_title'>
+                <input type="submit" value = "Post">
+            </form>
         </div>
     </div>
 </body>

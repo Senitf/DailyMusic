@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', music.views.home, name="home"),
     path('upload/', music.views.uploadNewMusic, name="uploadNewMusic"),
+    path('create/', music.views.create, name="create"),
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
