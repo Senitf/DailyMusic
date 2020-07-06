@@ -1,4 +1,4 @@
-# Music SNS Serivice using Django
+# Music SNS Serivice using Django framework
 --<br>
 장고를 이용하여 음원 관련 SNS 서비스를 구현합니다.👩‍💻 <br>
 html, css, javascript 를 이용하는 프론트-엔드 서비스와 <br>
