@@ -15,6 +15,6 @@ def create(request):
     music.title = request.GET['title']
     music.artist = request.GET['artist']
     music.album_title = request.GET['album_title']
-    music.image = request.FILES.get('image', '')
-    music.save
-    return redirect('/')
+    music.image = request.FILES.get('image', 'images/')
+    music.save()
+    return redirect('/')    
