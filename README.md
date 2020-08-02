@@ -38,6 +38,9 @@ youtube link fetch & provide feature fixed <br>
 20/07/25 <br>
 data model fix <br>
 
+20/08/02 <br>
+views.py def form to class form <br>
+
 --
 
 
