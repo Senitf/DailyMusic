@@ -1,0 +1,274 @@
+:root{
+    --main-background-color: aliceblue;
+    --main-text-color: rgb(31, 34, 31);
+    --sub-title-color: gray;
+    --background-color: rgb(92, 125, 175);
+    --song-title-color: #ebeef3;
+    --artist-color: #c9cbd0;
+    --album-color: #b8c0cc;
+    --sidebar-color: rgb(62, 159, 177);
+    --button-hover-color: rgba(5, 80, 114, 0.753);
+    --form-hover-color: gray;
+}
+
+@font-face{
+    font-family: "G마켓 산스";
+    src: url('../static/fonts/GmarketSansBold.otf');
+    font-weight: 700;
+}
+
+@font-face{
+    font-family: "G마켓 산스";
+    src: url('../static/fonts/GmarketSansMedium.otf');
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: "G마켓 산스";
+    src: url('../static/fonts/GmarketSansLight.otf');
+    font-weight: 100;
+}
+
+body{
+    margin: 0;
+    font-family: "G마켓 산스", helvetica, "Apple SD Gothic Neo", sans-serif;
+    background-color: var(--main-background-color);
+}
+
+.content{
+    display: grid;
+    grid-template-rows: 200px 80px auto 50px;
+    background-color: var(--main-background-color);
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100%;
+}
+
+.maintitle{
+    color: var(--main-text-color);
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.subtitle{
+    color: gray;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 30px;
+}
+
+.number-of-song{
+    font-size: 25px;
+    font-weight: bolder;
+    color: var(--main-text-color);
+}
+
+.song-list{
+    display: grid;
+    row-gap: 20px;
+}
+
+.song-template{
+    display: flex;
+    height: 85px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+}
+
+img{
+    width: 85px;
+    height: 85px;
+    border-radius: 10px;
+}
+
+.cover{
+    width: 85px;
+    height: 85px;
+}
+
+.song-info{
+    display: grid;
+    grid-template-rows: 3fr 2fr;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 95%;
+}
+
+.song-title{
+    font-size: 24px;
+    font-weight: bold;
+    height: 45px;
+    line-height: 45px;
+    color: var(--song-title-color);
+}
+
+.artist{
+    font-size: 15px;
+    font-weight: normal;
+    color: var(--artist-color);
+    height: 30px;
+    line-height: 30px;
+}
+
+.more{
+    display: flex;
+}
+
+.album{
+    font-size: 13px;
+    font-weight: lighter;
+    padding-left: 10px;
+    padding-top: 9px;
+    color: var(--album-color);
+}
+
+.form{
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    column-gap: 10px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input, .info label{
+    font-family: "G마켓 산스";
+    font-size: 20px;
+    color: var(--main-text-color);
+    background-color: var(--background-color);
+    border: none;
+    outline: none;
+    transition: background-color .3s;
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%;
+    line-height: 30px;
+    margin: 5px 0;
+  }
+
+  input:hover, .info label:hover{
+      background-color:  var(--form-hover-color);
+  }
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: var(--sidebar-color);
+    height: 100%;
+    position: fixed;
+}
+
+.sidebar > a{
+    width: 50px;
+    height: 50px;
+    margin: 10px 20px;
+    transition: background-color .3s;
+    text-align: center;
+}
+
+.sidebar > a :hover, #Nightmode:hover{
+    background-color: var(--button-hover-color);
+}
+
+.sidebar > a > svg, #Nightmode, i{
+    width: 30px;
+    height: 30px;
+    fill: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: aliceblue;
+    font-size: 30px;
+}
+
+.pagenator{
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr;
+    justify-items: center;
+    align-items: center;
+    margin: 30px 0;
+    color: var(--main-text-color);
+}
+
+.currentpage{ font-weight: bold; font-size: 20px;}
+
+.pagebutton{
+    margin: 0 25px;
+    text-decoration: none;
+    color: var(--main-text-color);
+    font-weight: bolder;
+    transition: color 0.3s;
+    font-size: 20px;
+}
+
+.pagebutton:hover{
+    color: var(--sidebar-color);
+}
+
+.fas{
+    line-height: 50px;
+    
+}
+
+.login{
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: auto;
+}
+
+#sign-in-button{
+    
+}
+
+td > input{
+    width: 100%;
+    padding-right: 0;
+}
+
+table{
+    width: 100%;
+}
+
+.song-info-input{
+    background-color: var(--background-color);
+    padding: 0;
+    border-radius: 0;
+}
+
+.title-input{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--song-title-color);
+    width: 100%;
+}
+
+.artist-input{
+    font-size: 15px;
+    color: var(--artist-color);
+    margin: 0;
+}
+
+.album-input{
+    font-size: 13px;
+    font-weight: lighter;
+    color: var(--album-color);
+    margin: 0;
+    line-height: 13px;
+    width: 100%;
+}
+
+.song-info-input:hover{background-color: var(--background-color);}
+.title-input::placeholder{color: var(--song-title-color);}
+.artist-input::placeholder{color: var(--artist-color);}
+.album-input::placeholder{color: var(--album-color);}
