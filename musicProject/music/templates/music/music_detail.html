@@ -7,7 +7,7 @@
 {% endif %}
 <a href="{% url 'music:favorite' object.id %}" class="float-left btn-like {%if user in object.favorite.all %} active {% endif %}"> save </a>
 
-{% if user == Music.author %}
+{% if user == object.author %}
     <a href="{% url 'music:update' music.id %}">update</a>
     <a href="{% url 'music:delete' music.id %}">delete</a>
 {% endif %}
