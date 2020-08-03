@@ -4,6 +4,5 @@ venv/
 *.pyc
 __pycache__/
 local_settings.py
-musicProject/media/
+
 DS.Store
-db.sqlite3
