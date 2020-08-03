@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Main</title>
         <link rel="stylesheet" href="../../../static/style.css?{% now "U" %}">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="https://kit.fontawesome.com/d5e63c1e41.js" crossorigin="anonymous"></script>
 
     </head>
@@ -15,7 +16,7 @@
         {{message}}
         {% endfor %}
         {% endif %}
-        <div class="sidebar" style="width: 75px;" id="sidebar">
+        <div class="sidebar" style="width: 75px; top: 0px;" id="sidebar">
             <a href="{% url 'music:index' %}" id="home">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" height="50pt" width="50pt">

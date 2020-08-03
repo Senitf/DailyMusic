@@ -18,8 +18,9 @@ def PlayTrailerOnYoutube(title, artist):
 
     lists = soup.select('#video-title')
     links = lists[0].attrs['href']
+    links = links[9:]
 
-    return "https://www.youtube.com" + links
+    return "https://www.youtube.com/embed/" + links
 
 def get_file_path(instance, filename):
     filename = instance.title + "_" + instance.artist + ".jpeg"
