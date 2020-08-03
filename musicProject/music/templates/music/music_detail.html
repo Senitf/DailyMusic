@@ -1,4 +1,36 @@
-<h1>detail page</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    <div class="warp">
+        <div class="content content--detail">
+            <div class="form detail">
+                <div class="cover cover--detail">
+                    <img src="{{ object.image.url }}">
+                </div>
+                <div class="song-template">
+                    <div class="song-info">
+                        <div class="song-title title--detail">{{ object.title }}</div>
+                        <div class="artist artist--detail">{{ object.artist }}</div>
+                        <div class="album album--detail">{{ object.album_title }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="video">
+                <iframe class="ytplayer" src="{{object.video_key_direct}}" frameborder=0 allowfullscreen></iframe>
+            </div>
+            <div class="disqus">
+                {% load disqus_tags %}
+                {% set_disqus_url post_absolute_url %}
+                {% disqus_show_comments %}
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
+<!-- <h1>detail page</h1>
 {{object.title}}
 
 <a href="{% url 'music:like' object.id %}" class="float-left btn-like {%if user in object.like.all %} active {% endif %}"> like </a>
@@ -7,11 +39,11 @@
 {% endif %}
 <a href="{% url 'music:favorite' object.id %}" class="float-left btn-like {%if user in object.favorite.all %} active {% endif %}"> save </a>
 
-{% if user == Music.author %}
+{% if user == object.author %}
     <a href="{% url 'music:update' music.id %}">update</a>
     <a href="{% url 'music:delete' music.id %}">delete</a>
 {% endif %}
 
 {% load disqus_tags %}
 {% set_disqus_url post_absolute_url %}
-{% disqus_show_comments %}
+{% disqus_show_comments %} -->

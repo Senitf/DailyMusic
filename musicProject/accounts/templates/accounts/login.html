@@ -2,10 +2,31 @@
 
 {% block content %}
 
-<form action="" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="login">
-</form>
+    {% if error %}
+    {{ error }}
+    <br>
+    <br>
+    {% endif %}
+
+    <div class="wrap">
+        <div class="content login">
+            <div class="title">
+                <div class="maintitle">Sign-in</div>
+                <div class="subtitle">Welcome back!</div>
+            </div>
+
+            <div></div>
+            <div class="info">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{form.username}}
+                    {{form.password}}
+                    <input type="submit" value="login">
+                </form>
+            </div>
+
+        </div>
+        
+    </div>
 
 {% endblock %}
