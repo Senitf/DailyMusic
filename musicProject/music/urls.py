@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import MusicList, MusicDelete, MusicDetail, MusicUpdate, MusicCreate, MusicLike, MusicFavorite
+from .views import *
 
 app_name = "music"
 urlpatterns = [
@@ -9,6 +9,8 @@ urlpatterns = [
     path("detail/<int:pk>/", MusicDetail.as_view(), name="detail"),
     path("like/<int:music_id>/", MusicLike.as_view(), name='like'),
     path("favorite/<int:music_id>/", MusicFavorite.as_view(), name='favorite'),
+    path("like/", MusicLikeList.as_view(), name="like_list"),
+    path("favorite/", MusicFavoriteList.as_view(), name="favorite_list"),
     path("", MusicList.as_view(), name="index"),
 ]
 

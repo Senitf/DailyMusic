@@ -108,3 +108,34 @@ class MusicFavorite(View):
                 else:
                     music.favorite.add(user)
             return HttpResponseRedirect('/')
+
+class  MusicLikeList(ListView):
+    model = Music
+    template_name = 'music/music_list.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        if not reuqest.user.is_authenticated:
+            messages.warning(reuquest, '로그인을 먼저 하세요')
+            return HttpResponseRedirect('/')
+        return super(MusicLikeList,self).dispatch(request, *args, **kwargs)
+
+    def get_queryset(self):
+        user = self.request.user
+        queryset = user.like_post.all()
+        return queryset
+
+class MusicFavoriteList(ListView):
+    model = Music
+    template_name = 'music/music_list.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        if not reuqest.user.is_authenticated:
+            messages.warning(reuquest, '로그인을 먼저 하세요')
+            return HttpResponseRedirect('/')
+        return super(MusicFavoriteList,self).dispatch(request, *args, **kwargs)
+
+    def get_queryset(self):
+        user = self.request.user
+        queryset = user.favorite_post.all()
+        return queryset
+    
