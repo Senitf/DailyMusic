@@ -10,11 +10,20 @@
                     <img src="{{ object.image.url }}">
                 </div>
                 <div class="song-template">
-                    <div class="song-info">
-                        <div class="song-title title--detail">{{ object.title }}</div>
-                        <div class="artist artist--detail">{{ object.artist }}</div>
-                        <div class="album album--detail">{{ object.album_title }}</div>
+                    
+                    <div class="song-title title--detail">{{ object.title }}</div>
+                    <div class="footbox">
+                        <div class="footbox--info">
+                            <div class="artist artist--detail">{{ object.artist }}</div>
+                            <div class="album album--detail">{{ object.album_title }}</div>
+                        </div>
+                        <div class="footbox-btn">
+                            <a href="{% url 'music:favorite' object.id %}" class="float-left btn-like {%if user in object.favorite.all %} saved {% endif %}"><i class="fas fa-star"></i></a>
+                            <a href="{% url 'music:like' object.id %}" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart"></i></a>
+                        </div>
                     </div>
+                        
+                    
                 </div>
             </div>
             <div class="video">
@@ -30,20 +39,15 @@
 </body>
 
 {% endblock %}
-<!-- <h1>detail page</h1>
-{{object.title}}
+
 
 <a href="{% url 'music:like' object.id %}" class="float-left btn-like {%if user in object.like.all %} active {% endif %}"> like </a>
 {% if object.like.all.count %}
 {{object.like.all.count}}
 {% endif %}
-<a href="{% url 'music:favorite' object.id %}" class="float-left btn-like {%if user in object.favorite.all %} active {% endif %}"> save </a>
+
 
 {% if user == object.author %}
     <a href="{% url 'music:update' music.id %}">update</a>
     <a href="{% url 'music:delete' music.id %}">delete</a>
 {% endif %}
-
-{% load disqus_tags %}
-{% set_disqus_url post_absolute_url %}
-{% disqus_show_comments %} -->

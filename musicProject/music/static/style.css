@@ -292,7 +292,7 @@ table{
     margin-bottom: 30px;
     border-radius: 30px;
     background-color: var(--background-color);
-    grid-template-rows: 200px auto auto;
+    grid-template-rows: 150px auto auto;
     grid-gap: 20px;
 }
 
@@ -302,19 +302,58 @@ table{
  
 .detail{
     grid-template-columns: 150px 1fr;
+    column-gap: 25px;
 }
 
 .title--detail{
     font-size: 32px;
+    margin-top: 5px;
+    margin-bottom: 35px;
 }
 
 .artist--detail{
     font-size: 20px;
-    margin-top: 14px;
 }
 
 .album--detail{
     font-size: 15px;
     margin-top: 10px;
     padding: 0;
+}
+
+.footbox{
+    display: grid;
+    grid-template-columns: auto 110px;
+}
+
+.footbox--btn{
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+
+.fa-heart, .fa-star{
+    color: inherit;
+    transition: color ease 0.3s;
+}
+
+.btn-like{
+    color: var(--song-title-color);
+    text-decoration: none;
+}
+
+.fa-heart:hover{
+    color:rgb(207, 31, 31);
+}
+
+.fa-star:hover{
+    color: goldenrod;
+}
+
+.liked{
+    color:rgb(207, 31, 31);
+}
+
+.saved{
+    color: goldenrod;
 }
