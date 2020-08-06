@@ -11,8 +11,11 @@
         <div class="uploadform">
             <form method='post' enctype="multipart/form-data" action="">
             {% csrf_token %}
-            {{form.as_p}}  
+            {{form.as_p}}
+            <input type="radio" name="category" value="yt"/>Youtube
+            <input type="radio" name="category" value="sc"/>SoundCloud  
             <input type="submit" value="제출하기">
+            
             </form>
         </div>
         

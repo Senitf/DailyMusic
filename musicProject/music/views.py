@@ -32,7 +32,7 @@ class MusicList(ListView):
 
 class MusicCreate(CreateView):
     model = Music
-    fields = ['title', 'artist', 'album_title', 'image']
+    fields = ['title', 'artist', 'album_title', 'image', 'soundcloud_key_direct']
     template_name_suffix = '_create'
     success_url = '/'
 
