@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    <script>
+        $(document).ready(function(){
+            $('.video').hide()
+        });
+
+        $(document).on("click", ".song-template", function(){
+            $(this).children('.video').slideToggle({direction: "down"})
+        });
+    </script>
+    <div class="wrap">
+        <div class="content">
+            <div class="title">
+                <div class="maintitle">Thx Youtube 01 - Grvy Midngt</div>
+                <div class="subtitle">유튜브는 나보다 조금 낫다</div>
+            </div>
+
+            <div class="number-of-song">{{ count }} Songs</div>
+
+            <div class="song-list">
+                {% for Music in object_list %}
+                {% if Music.author == request.user %}
+                    <div class="form">
+                        <div class="cover">
+                            <a href="{% url 'music:detail' Music.id %}">
+                                <img src="{{ Music.image.url }}">
+                            </a>
+                        </div>
+                        <div class="song-template">
+                            <div class="song-info">
+                                <div class="song-title">{{ Music.title }}</div>
+                                <div class="more">
+                                    <div class="artist">{{ Music.artist }}</div>
+                                    <div class="album">{{ Music.album_title }}</div>
+                                </div>
+                            </div>
+                            <div class="video collapse">
+                                <iframe class="ytplayer" src="{{Music.video_key_direct}}" frameborder=0 allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                {% endfor %}
+                </div>
+
+            <div class="pagenator">
+                <div class="toprev">
+                    {%if page_obj.has_previous %}
+                    <a class="pagebutton" id="tofirst" href="?page=1">❮❮</a>
+                    <a class="pagebutton" id="prev" href="{{request.path}}?page={{page_obj.previous_page_number}}">❮</a>
+                    {%endif%}
+                </div>
+
+                <div class="current"><span class="currentpage">{{page_obj.number}} of {{page_obj.paginator.num_pages}}</span></div>
+                
+                <div class="tonext">
+                    {%if page_obj.has_next%}
+                    <a class="pagebutton" id="next" href="{{request.path}}?page={{page_obj.next_page_number}}">❯</a>
+                    <a class="pagebutton" id="tolast" href="{{request.path}}?page={{page_obj.paginator.num_pages}}">❯❯</a>
+                    {%endif%}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
