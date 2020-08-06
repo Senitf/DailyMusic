@@ -39,7 +39,8 @@ class MusicCreate(CreateView):
     def form_valid(self, form):
         form.instance.author_id = self.request.user.id
         if form.is_valid():
-            form.instance.video_key_direct = PlayTrailerOnYoutube(form.instance.title, form.instance.artist)
+            if form.instance.category == "yt":
+                form.instance.video_key_direct = PlayTrailerOnYoutube(form.instance.title, form.instance.artist)
             form.instance.save()
             return redirect('/')
         else:
@@ -116,7 +117,7 @@ class  MusicLikeList(ListView):
     def dispatch(self, request, *args, **kwargs):
         if not reuqest.user.is_authenticated:
             messages.warning(reuquest, '로그인을 먼저 하세요')
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/accounts/login/')
         return super(MusicLikeList,self).dispatch(request, *args, **kwargs)
 
     def get_queryset(self):
@@ -131,7 +132,7 @@ class MusicFavoriteList(ListView):
     def dispatch(self, request, *args, **kwargs):
         if not reuqest.user.is_authenticated:
             messages.warning(reuquest, '로그인을 먼저 하세요')
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/accounts/login/')
         return super(MusicFavoriteList,self).dispatch(request, *args, **kwargs)
 
     def get_queryset(self):
