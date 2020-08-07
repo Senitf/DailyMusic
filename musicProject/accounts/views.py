@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 # Create your views here.
 
-def signup(request):
+def make_new_account(request):
+    '''
     if request.method == 'POST':
         # User has info and wants an account now!
         if request.POST['password1'] == request.POST['password2']:
@@ -20,6 +21,8 @@ def signup(request):
     else:
         # User wants to enter info
         return render(request, 'accounts/signup.html')
+    '''
+    return render(request, 'accounts/make_new_account.html')
 
 def login(request):
     if request.method == 'POST':
@@ -38,4 +41,4 @@ def logout(request):
     if request.method == "POST":
         auth.logout(request)
         return redirect('home')
-    return render(request, 'accounts/signup.html')
+    return render(request, 'accounts/make_new_account.html')
