@@ -11,6 +11,7 @@ urlpatterns = [
     path("favorite/<int:music_id>/", MusicFavorite.as_view(), name='favorite'),
     path("like/", MusicLikeList.as_view(), name="like_list"),
     path("favorite/", MusicFavoriteList.as_view(), name="favorite_list"),
+    path("playlist/", MusicPlayList.as_view(), name="playlist"),
     path("", MusicList.as_view(), name="index"),
 ]
 

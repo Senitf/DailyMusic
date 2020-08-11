@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.utils import timezone
 from django.core.paginator import Paginator
 from urllib.parse import urlparse
-from .models import Music
+from .models import *
 from .funcs import PlayTrailerOnYoutube
 
 # Create your views here.
@@ -110,7 +110,7 @@ class MusicFavorite(View):
                     music.favorite.add(user)
             return HttpResponseRedirect('/')
 
-class  MusicLikeList(ListView):
+class MusicLikeList(ListView):
     model = Music
     template_name = 'music/music_list.html'
 
@@ -139,4 +139,17 @@ class MusicFavoriteList(ListView):
         user = self.request.user
         queryset = user.favorite_post.all()
         return queryset
+
+class MusicPlayList(ListView):
+    model = PlayList
+    template_name = 'music/music_playlist.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        if not reuqest.user.is_authenticated:
+            messages.warning(reuquest, '로그인을 먼저 하세요')
+            return HttpResponseRedirect('/accounts/login/')
+        return super(MusicPlayList,self).dispatch(request, *args, **kwargs)
     
+    def get_queryset(self):
+        queryset = self.like_playlist.all()
+        return queryset
