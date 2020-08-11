@@ -6,24 +6,37 @@
     <br>
     <br>
     {% endif %}
+<div class="wrap">
 
-    <h1>Sign Up!</h1>
 
-    <form method="POST", action="{% url 'accounts:make_new_account'%}">
-        {% csrf_token %}
-        Username:
-        <br>
-        <input name="username" type="text" value="">
-        <br>
-        Password:
-        <br>
-        <input name="password1" type="password" value="">
-        <br>
-        Confirm Password:
-        <br>
-        <input name="password2" type="password" value="">
-        <br>
-        <br>
-        <input type="submit" value="Sign Up!">
-    </form>
+    <div class="content signup">
+        <div class="title">
+            <div class="maintitle">Sign-up</div>
+            <div class="subtitle">Welcome!</div>
+        </div>
+        
+        <div class="info">
+            <form class="signupform" method="POST", action="{% url 'accounts:make_new_account'%}">
+                {% csrf_token %}
+                <div class="input-wrapper">
+                    username
+                    <input name="username" type="text" value="" placeholder="Username">
+                </div>
+
+                <div class="input-wrapper">
+                    password
+                    <input name="password1" type="password" value="" placeholder="Password (At least 8 characters)">
+                </div>
+
+                <div class="input-wrapper">
+                    confirm password
+                    <input name="password2" type="password" value="" placeholder="Confirm your password">
+                </div>
+            
+                <input id="signup" style="grid-column: span 3;" type="submit" value="Create new account">
+            </form>
+        </div>
+
+    </div>
+</div>
 {% endblock %}

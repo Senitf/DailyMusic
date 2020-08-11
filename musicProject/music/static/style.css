@@ -45,6 +45,10 @@ body{
     height: 100%;
 }
 
+.signup, .login{
+    grid-template-rows: 200px auto;
+}
+
 .maintitle{
     color: var(--main-text-color);
     font-size: 50px;
@@ -130,7 +134,7 @@ img{
     column-gap: 10px;
 }
 
-.loginform{
+.loginform, .signupform{
     display: grid;
     grid: auto / 45% 10% 45%;
     text-align: start;
@@ -156,25 +160,28 @@ input, #signup{
     line-height: 30px;
     margin: 10px 0;
     text-decoration: none;
-  }
+}
 
   
   
 
-  #login, #signup{
-      text-align: center;
-      font-size: 15px;
-      font-weight: bold;
-      background-color: var(--sidebar-color);
-      border: none;
-      color: whitesmoke ;
-  }
+#login, #signup{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--sidebar-color);
+    border: none;
+    color: whitesmoke ;
+}
 
-  #login:hover, #signup
+input:focus{
+    border: 2px solid var(--background-color);
+}
 
-  input:hover{
-      border: 2px solid var(--background-color);
-  }
+input::placeholder{
+    font-size: 15px;
+    overflow: visible;
+}
 
 .sidebar{
     display: flex;
@@ -238,7 +245,7 @@ input, #signup{
     
 }
 
-.login{
+.login, .signup{
     height: auto;
     position: absolute;
     top: 50%;

@@ -8,6 +8,13 @@
     <br>
     {% endif %}
 
+    <script>
+        $(document).ready(function(){
+            $("#id_username").attr('placeholder', 'Username');
+            $("#id_password").attr('placeholder', 'Password');
+        });
+    </script>
+
     <div class="wrap">
         <div class="content login">
             <div class="title">
@@ -15,13 +22,13 @@
                 <div class="subtitle">Welcome back!</div>
             </div>
 
-            <div></div>
             <div class="info">
                 <form class="loginform" action="" method="post">
                     {% csrf_token %}
                     <div class="input-wrapper">
                         <label class="inputlabel">username</label>
-                        {{form.username}}</div>
+                        {{form.username}}
+                    </div>
                     <div class="input-wrapper">
                         <label class="inputlabel">password</label>
                         {{form.password}}
