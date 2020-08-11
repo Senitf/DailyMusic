@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'musicProject',
     'music.apps.MusicConfig',
     'accounts.apps.AccountsConfig',
     'django.contrib.sites',
