@@ -41,6 +41,9 @@ data model fix <br>
 20/08/02 <br>
 views.py def form to class form <br>
 
+20/08/11 <br?
+playlist model fixed <br>
+
 --
 
 
