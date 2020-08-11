@@ -18,7 +18,7 @@ class Music(models.Model):
     video_key_direct = models.CharField(max_length=50, blank=True)
     video_key_link = models.CharField(max_length=50, blank=True)
 
-    soundcloud_key_direct = models.CharField(max_length=50, blank=True)
+    soundcloud_key_direct = models.TextField(blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

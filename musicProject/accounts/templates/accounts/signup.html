@@ -9,7 +9,7 @@
 
     <h1>Sign Up!</h1>
 
-    <form method="POST", action="{% url 'signup'%}">
+    <form method="POST", action="{% url 'accounts:signup'%}">
         {% csrf_token %}
         Username:
         <br>
