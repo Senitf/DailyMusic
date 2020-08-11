@@ -1,6 +1,8 @@
+<!--
 {% extends 'base.html' %}
 
 {% block content %}
+-->
     {% if error %}
     {{ error }}
     <br>
@@ -9,7 +11,7 @@
 
     <h1>Sign Up!</h1>
 
-    <form method="POST", action="{% url 'accounts:make_new_account'%}">
+    <form method="POST", action="{% url 'accounts:signup'%}">
         {% csrf_token %}
         Username:
         <br>
@@ -23,7 +25,12 @@
         <br>
         <input name="password2" type="password" value="">
         <br>
+        <input type="file" name="profile_image">
+        <br>
+        <input type="text" name="nickname">
         <br>
         <input type="submit" value="Sign Up!">
     </form>
+<!--
 {% endblock %}
+-->
