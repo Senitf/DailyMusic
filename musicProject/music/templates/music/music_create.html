@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 
+
+
 <div class="wrap">
     <div class='content'>
         <div class="title">
@@ -11,9 +13,14 @@
         <div class="uploadform">
             <form method='post' enctype="multipart/form-data" action="">
             {% csrf_token %}
-            {{form.as_p}}
+            {{form.title}}
+            {{form.artist}} 
+            {{form.album_title}} 
+            {{form.image}} 
             <input type="radio" name="category" value="yt"/>Youtube
-            <input type="radio" name="category" value="sc"/>SoundCloud  
+            <input type="radio" name="category" value="sc"/>SoundCloud
+            {{form.soundcloud_key_direct}} 
+            
             <input type="submit" value="제출하기">
             
             </form>
@@ -21,5 +28,16 @@
         
     </div>
 </div>
-
+<script>
+    $("input:radio[name=category]").change(function(){
+        if($("input:radio[name=category]:checked").val()=="sc"){
+            $('#id_soundcloud_key_direct').show();
+            console.log('select!')
+        }
+        else{
+            $('#id_soundcloud_key_direct').hide();
+            console.log('unselect!')
+        }
+    });
+</script>
 {%endblock%}

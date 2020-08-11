@@ -130,29 +130,50 @@ img{
     column-gap: 10px;
 }
 
-.info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.loginform{
+    display: grid;
+    grid: auto / 45% 10% 45%;
+    text-align: start;
 }
 
-input, .info label{
+.input-wrapper{
+    grid-column: span 3;
+    margin-bottom: 20px;
+}
+
+input, #signup{
     font-family: "G마켓 산스";
     font-size: 20px;
     color: var(--main-text-color);
-    background-color: var(--background-color);
-    border: none;
+    background-color: white;
+    border: 2px solid var(--album-color);
     outline: none;
-    transition: background-color .3s;
+    transition: border .3s;
     padding: 10px;
-    border-radius: 10px;
-    width: 50%;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
     line-height: 30px;
-    margin: 5px 0;
+    margin: 10px 0;
+    text-decoration: none;
   }
 
-  input:hover, .info label:hover{
-      background-color:  var(--form-hover-color);
+  
+  
+
+  #login, #signup{
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      background-color: var(--sidebar-color);
+      border: none;
+      color: whitesmoke ;
+  }
+
+  #login:hover, #signup
+
+  input:hover{
+      border: 2px solid var(--background-color);
   }
 
 .sidebar{
@@ -225,6 +246,9 @@ input, .info label{
     transform: translate(-50%, -50%);
     text-align: center;
     width: auto;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 #sign-in-button{
@@ -356,4 +380,8 @@ table{
 
 .saved{
     color: goldenrod;
+}
+
+form{
+    display: grid;
 }
