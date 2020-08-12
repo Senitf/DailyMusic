@@ -14,8 +14,8 @@ def signup(request):
             except User.DoesNotExist:
                 user = User.objects.create_user(
                     username=request.POST['username'], password=request.POST['password1'])
-                nickname = request.POST['nickname']
-                profile_image = request.POST['profile_image']
+                nickname = request.POST.get('nickname')
+                profile_image = request.FILES.get('profile_image')
                 musicUser = MusicUser(user=user, nickname=nickname, profile_image=profile_image)
                 musicUser.save()
                 auth.login(request, user)
