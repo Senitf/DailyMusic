@@ -68,8 +68,7 @@ class MusicDelete(DeleteView):
     def dispatch(self, request, *args, **kwargs):
         object = self.get_object()
         if object.author != request.user:
-            message
-            s.warning(request, '수정할 권한이 없다.')
+            messages.warning(request, '수정할 권한이 없다.')
             return HttpResponseRedirect('/')
         else:
             return super(MusicDelete, self).dispatch(request, *args, **kwargs)
@@ -115,8 +114,8 @@ class MusicLikeList(ListView):
     template_name = 'music/music_list.html'
 
     def dispatch(self, request, *args, **kwargs):
-        if not reuqest.user.is_authenticated:
-            messages.warning(reuquest, '로그인을 먼저 하세요')
+        if not request.user.is_authenticated:
+            messages.warning(request, '로그인을 먼저 하세요')
             return HttpResponseRedirect('/accounts/login/')
         return super(MusicLikeList,self).dispatch(request, *args, **kwargs)
 
@@ -130,8 +129,8 @@ class MusicFavoriteList(ListView):
     template_name = 'music/music_list.html'
 
     def dispatch(self, request, *args, **kwargs):
-        if not reuqest.user.is_authenticated:
-            messages.warning(reuquest, '로그인을 먼저 하세요')
+        if not request.user.is_authenticated:
+            messages.warning(request, '로그인을 먼저 하세요')
             return HttpResponseRedirect('/accounts/login/')
         return super(MusicFavoriteList,self).dispatch(request, *args, **kwargs)
 
@@ -145,11 +144,11 @@ class MusicPlayList(ListView):
     template_name = 'music/music_playlist.html'
 
     def dispatch(self, request, *args, **kwargs):
-        if not reuqest.user.is_authenticated:
-            messages.warning(reuquest, '로그인을 먼저 하세요')
+        if not request.user.is_authenticated:
+            messages.warning(request, '로그인을 먼저 하세요')
             return HttpResponseRedirect('/accounts/login/')
         return super(MusicPlayList,self).dispatch(request, *args, **kwargs)
     
     def get_queryset(self):
-        queryset = self.like_playlist.all()
+        queryset = PlayList.objects.all()
         return queryset

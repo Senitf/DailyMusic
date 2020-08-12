@@ -31,6 +31,7 @@
 
 body{
     margin: 0;
+    height: 100%;
     font-family: "G마켓 산스", helvetica, "Apple SD Gothic Neo", sans-serif;
     background-color: var(--main-background-color);
 }
@@ -43,6 +44,16 @@ body{
     margin: 0 auto;
     padding: 20px;
     height: 100%;
+}
+
+.warp{
+    height: 100%;
+}
+
+.signup, .login{
+    grid-template-rows: 200px auto;
+    overflow: scroll;
+    margin: 100px auto;
 }
 
 .maintitle{
@@ -130,7 +141,7 @@ img{
     column-gap: 10px;
 }
 
-.loginform{
+.loginform, .signupform{
     display: grid;
     grid: auto / 45% 10% 45%;
     text-align: start;
@@ -156,25 +167,28 @@ input, #signup{
     line-height: 30px;
     margin: 10px 0;
     text-decoration: none;
-  }
+}
 
   
   
 
-  #login, #signup{
-      text-align: center;
-      font-size: 15px;
-      font-weight: bold;
-      background-color: var(--sidebar-color);
-      border: none;
-      color: whitesmoke ;
-  }
+#login, #signup{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--sidebar-color);
+    border: none;
+    color: whitesmoke ;
+}
 
-  #login:hover, #signup
+input:focus{
+    border: 2px solid var(--background-color);
+}
 
-  input:hover{
-      border: 2px solid var(--background-color);
-  }
+input::placeholder{
+    font-size: 15px;
+    overflow: visible;
+}
 
 .sidebar{
     display: flex;
@@ -238,7 +252,7 @@ input, #signup{
     
 }
 
-.login{
+.login, .signup{
     height: auto;
     position: absolute;
     top: 50%;
@@ -385,3 +399,77 @@ table{
 form{
     display: grid;
 }
+
+.base-wrap{
+    display: flex;
+    flex-direction: column;
+    height: 75px;
+    position: fixed;
+    width: 100%;
+}
+
+header{
+    display: flex;
+    height: 75px;
+
+}
+
+img{
+    height: 75px;
+    width: 75px;
+}
+
+.login-button, .list{
+    margin-left: auto;
+}
+
+.content-main{
+    display: grid;
+    grid-template-rows: 55px auto auto;
+    padding: 40px;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.title > div{
+    margin-right: 10px;
+}
+
+.main-title{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.sub-title{
+    font-size: 15px;
+    font-weight: lighter;
+    color: var(--sub-title-color);
+}
+
+.playlist-today{
+    display: grid;
+    grid: 1fr / 1fr 1fr 1fr;
+    margin: 20px 80px;
+    grid-gap: 5%;
+}
+
+.playlist-cover{
+    width: 100%;
+    border: 1px solid black;
+}
+
+.playlist-info{
+    display: grid;
+    grid: auto / 1fr 10%;
+    border: 1px solid gray;
+    width: 100%;
+}
+
+.playlist-title, .playlist-author{
+    grid-column: span 2;
+}
+

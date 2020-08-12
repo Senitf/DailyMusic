@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
-from .funcs import get_file_path
+from .funcs import *
 
 # Create your models here.
 
@@ -37,8 +37,10 @@ class Music(models.Model):
 
 class PlayList(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='playlist_user')
+    title = models.CharField(max_length=50, blank=True)
 
     musics = models.ManyToManyField(Music, related_name='playlist', blank=True)
+    image = models.ImageField(upload_to=get_file_path_playlist)
 
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
