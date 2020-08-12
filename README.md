@@ -41,8 +41,12 @@ data model fix <br>
 20/08/02 <br>
 views.py def form to class form <br>
 
-20/08/11 <br?
+20/08/11 <br>
 playlist model fixed <br>
+
+20/08/12 <br>
+fix music_playlist.html <br>
+playlist model fix <br>
 
 --
 
