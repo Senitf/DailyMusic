@@ -27,5 +27,5 @@ def get_file_path(instance, filename):
     return os.path.join('album_image/%Y/%m/%d', filename)
 
 def get_file_path_playlist(instance, filename):
-    file_name = instance.title + "_" + instance.author + ".jpeg"
+    filename = instance.title + "_" + str(instance.author) + ".jpeg"
     return os.path.join('playlist_image/%Y/%m/%d', filename)

@@ -25,12 +25,16 @@
             {% for PL in object_list %}
             <div class="playlist-form">
                 <div class="playlist-cover">
-                    <img src="ibiza_Crush.jpeg" alt="fuck sibal" style="display: block; width: 100%; height: auto;">
+                    <img src="{{ PL.image.url }}" alt="fuck sibal" style="display: block; width: 100%; height: auto;">
                 </div>
                 <div class="playlist-info">
-                    <div class="playlist-title">Sample Playlist 1</div>
+                    <div class="playlist-title">{{PL.title}}</div>
                     <div class="playlist-author">{{PL.author}}</div>
                     <div class="playlist-song-count">{{PL.musics.count}} Songs</div>
+                    <div class="footbox-btn">
+                        <a href="{% url 'music:likeplaylist' PL.id %}" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart"></i>
+                        </a>
+                    </div>
                     <div class="playlist-like-btn">♡</div>
                 </div>
             </div>
