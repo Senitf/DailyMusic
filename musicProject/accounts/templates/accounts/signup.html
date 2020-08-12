@@ -18,7 +18,7 @@
         </div>
         
         <div class="info">
-            <form class="signupform" method="POST", action="{% url 'accounts:signup'%}">
+            <form class="signupform" method="POST", enctype="multipart/form-data", action="{% url 'accounts:signup'%}">
                 {% csrf_token %}
                 <div class="input-wrapper">
                     username
