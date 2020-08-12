@@ -152,3 +152,10 @@ class MusicPlayList(ListView):
     def get_queryset(self):
         queryset = self.like_playlist.all()
         return queryset
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get the context
+        context = super(MusicPlayList, self).get_context_data(**kwargs)
+        # Create any data and add it to the context
+        context['count'] = Music.objects.count()
+        return context

@@ -25,3 +25,7 @@ def PlayTrailerOnYoutube(title, artist):
 def get_file_path(instance, filename):
     filename = instance.title + "_" + instance.artist + ".jpeg"
     return os.path.join('album_image/%Y/%m/%d', filename)
+
+def get_file_path_playlist(instance, filename):
+    file_name = instance.title + "_" + instance.author + ".jpeg"
+    return os.path.join('playlist_image/%Y/%m/%d', filename)
