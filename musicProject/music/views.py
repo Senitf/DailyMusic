@@ -32,15 +32,14 @@ class MusicList(ListView):
 
 class MusicCreate(CreateView):
     model = Music
-    fields = ['title', 'artist', 'album_title', 'image', 'soundcloud_key_direct']
+    fields = ['title', 'artist', 'album_title', 'image']
     template_name_suffix = '_create'
     success_url = '/'
 
     def form_valid(self, form):
         form.instance.author_id = self.request.user.id
         if form.is_valid():
-            if form.instance.category == "yt":
-                form.instance.video_key_direct = PlayTrailerOnYoutube(form.instance.title, form.instance.artist)
+            form.instance.video_key_direct = PlayTrailerOnYoutube(form.instance.title, form.instance.artist)
             form.instance.save()
             return redirect('/')
         else:
@@ -152,3 +151,20 @@ class MusicPlayList(ListView):
     def get_queryset(self):
         queryset = PlayList.objects.all()
         return queryset
+
+class PlayListLike(View):
+    def get(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return HttpResponseForbidden()
+        else:
+            if 'playlist_id' in kwargs:
+                playlist_id = kwargs['playlist_id']
+                playlist = PlayList.objects.get(pk=playlist_id)
+                user = request.user
+                if user in playlist.like.all():
+                    playlist.like.remove(user)
+                else:
+                    playlist.like.add(user)
+            referer_url = request.META.get('HTTP_REFERER')
+            path = urlparse(referer_url).path
+            return HttpResponseRedirect(path)

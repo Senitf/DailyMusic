@@ -12,6 +12,7 @@ urlpatterns = [
     path("like/", MusicLikeList.as_view(), name="like_list"),
     path("favorite/", MusicFavoriteList.as_view(), name="favorite_list"),
     path("playlist/", MusicPlayList.as_view(), name="playlist"),
+    path("likeplaylist/<int:playlist_id>/", PlayListLike.as_view(), name ="likeplaylist"),
     path("", MusicList.as_view(), name="index"),
 ]
 

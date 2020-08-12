@@ -7,3 +7,4 @@ local_settings.py
 musicProject/media/
 .DS_Store
 db.sqlite3
+*.jpeg

@@ -6,7 +6,6 @@ from .funcs import *
 # Create your models here.
 
 class Music(models.Model):
-    category = models.CharField(max_length=50, blank=True)
 
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')
     title = models.CharField(max_length=50, blank=True)
@@ -17,8 +16,6 @@ class Music(models.Model):
     
     video_key_direct = models.CharField(max_length=50, blank=True)
     video_key_link = models.CharField(max_length=50, blank=True)
-
-    soundcloud_key_direct = models.TextField(blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
