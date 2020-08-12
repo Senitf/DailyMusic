@@ -43,4 +43,4 @@ def logout(request):
     if request.method == "POST":
         auth.logout(request)
         return redirect('music:index')
-    return render(request, 'accounts/make_new_account.html')
+    return render(request, 'accounts/signup.html')
