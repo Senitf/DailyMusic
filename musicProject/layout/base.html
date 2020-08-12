@@ -34,23 +34,21 @@
                         </li>
                         {% endif %}
                     </ul>
-                    
-                    
-                    {% if user.is_authenticated %}
-                    <a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}">
-                        <i class="fas fa-sign-out-alt"></i>
-                    </a>
-                    <form id="logout" method="POST" action="{% url 'accounts:logout' %}">
-                        {% csrf_token %} <input type="hidden" />
-                    </form>
-                    {% else %}
-                    <a href="{% url 'accounts:login' %}">
-                    <i class="fas fa-sign-in-alt"></i>
-                    </a>
-                    {% endif %}
                 </div>
                 
-
+                <div class="login-button"></div>
+                {% if user.is_authenticated %}
+                <a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}">
+                    Sign-Out
+                </a>
+                <form id="logout" method="POST" action="{% url 'accounts:logout' %}">
+                    {% csrf_token %} <input type="hidden" />
+                </form>
+                {% else %}
+                <a href="{% url 'accounts:login' %}">
+                    Sign-in
+                </a>
+                {% endif %}
             </header>
 
             {% block content %}

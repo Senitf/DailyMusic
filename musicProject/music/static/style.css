@@ -405,10 +405,12 @@ form{
     flex-direction: column;
     height: 75px;
     position: fixed;
+    width: 100%;
 }
 
-.header{
+header{
     display: flex;
+    height: 75px;
 
 }
 
@@ -416,3 +418,58 @@ img{
     height: 75px;
     width: 75px;
 }
+
+.login-button, .list{
+    margin-left: auto;
+}
+
+.content-main{
+    display: grid;
+    grid-template-rows: 55px auto auto;
+    padding: 40px;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.title > div{
+    margin-right: 10px;
+}
+
+.main-title{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.sub-title{
+    font-size: 15px;
+    font-weight: lighter;
+    color: var(--sub-title-color);
+}
+
+.playlist-today{
+    display: grid;
+    grid: 1fr / 1fr 1fr 1fr;
+    margin: 20px 80px;
+    grid-gap: 5%;
+}
+
+.playlist-cover{
+    width: 100%;
+    border: 1px solid black;
+}
+
+.playlist-info{
+    display: grid;
+    grid: auto / 1fr 10%;
+    border: 1px solid gray;
+    width: 100%;
+}
+
+.playlist-title, .playlist-author{
+    grid-column: span 2;
+}
+

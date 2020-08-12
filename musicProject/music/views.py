@@ -150,5 +150,5 @@ class MusicPlayList(ListView):
         return super(MusicPlayList,self).dispatch(request, *args, **kwargs)
     
     def get_queryset(self):
-        queryset = self.like_playlist.all()
+        queryset = PlayList.objects.all()
         return queryset
