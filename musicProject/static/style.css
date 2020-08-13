@@ -88,12 +88,6 @@ body{
     border-radius: 10px;
 }
 
-img{
-    width: 100%;
-    height: 85px;
-    border-radius: 10px;
-}
-
 .cover{
 
 }
@@ -213,7 +207,7 @@ input::placeholder{
     background-color: var(--button-hover-color);
 }
 
-.sidebar > a > svg, #Nightmode, i{
+.sidebar > a > svg, #Nightmode{
     width: 30px;
     height: 30px;
     fill: aliceblue;
@@ -396,6 +390,10 @@ table{
     color: goldenrod;
 }
 
+body{
+    overflow: visible;
+}
+
 form{
     display: grid;
 }
@@ -404,7 +402,6 @@ form{
     display: flex;
     flex-direction: column;
     height: 75px;
-    position: fixed;
     width: 100%;
 }
 
@@ -414,7 +411,11 @@ header{
 
 }
 
-img{
+.footer{
+    width: 50px;
+}
+
+img#mainlogo{
     height: 75px;
     width: 75px;
 }
@@ -425,8 +426,11 @@ img{
 
 .content-main{
     display: grid;
+    position: relative;
     grid-template-rows: 55px auto auto;
     padding: 40px;
+    width: 65%;
+    margin: 0 auto;
 }
 
 .title{
@@ -450,10 +454,58 @@ img{
     color: var(--sub-title-color);
 }
 
-.playlist-today{
+.playlist-today--form{
     display: grid;
-    grid: 1fr / 1fr 1fr 1fr;
-    margin: 20px 80px;
-    grid-gap: 5%;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 10px;
+    width: 90%;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding:15px;
+    background-image: url(/musicProject/music/static/pic/testcover.jpeg);
+    background-size: cover;
+
+}
+
+.playlist-today--form--head{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.playlist-today--form--head--main-title{
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.playlist-today--form--head--like-btn{
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: 10px;
+}
+.playlist-today--form--author{
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+.playlist-today--form--number-of-songs{
+    margin-left: auto;
+}
+
+.playlist-cover{
+    width: 100%;
+    border: 1px solid black;
+}
+
+.playlist-info{
+    display: grid;
+    grid: auto / 1fr 10%;
+    border: 1px solid gray;
+    width: 100%;
+}
+
+.playlist-title, .playlist-author{
+    grid-column: span 2;
 }
 
