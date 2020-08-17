@@ -408,7 +408,26 @@ form{
 header{
     display: flex;
     height: 75px;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.navbar{
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar li{
+    padding: 8px 12px;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+.navbar li > a{
+    text-decoration:none;
+    color: var(--main-text-color);
 }
 
 .footer{
@@ -429,7 +448,7 @@ img#mainlogo{
     position: relative;
     grid-template-rows: 55px auto auto;
     padding: 40px;
-    width: 65%;
+    width: 75%;
     margin: 0 auto;
 }
 
@@ -452,6 +471,10 @@ img#mainlogo{
     font-size: 15px;
     font-weight: lighter;
     color: var(--sub-title-color);
+}
+
+.today-pick, .playlists-all{
+    padding: 0 2.5%;
 }
 
 .playlist-today--form{
@@ -508,22 +531,47 @@ img#mainlogo{
 
 .playlist-cover{
     width: 100%;
-    border: 1px solid black;
+
 }
 
 .playlist-info{
+    box-sizing: border-box;
     display: grid;
     grid: auto / 1fr 10%;
-    border: 1px solid gray;
+    border: 2px solid lightgray;
+    border-top: none;
     width: 100%;
+    padding: 3%;
 }
+
 
 .playlist-title, .playlist-author{
     grid-column: span 2;
+}
+
+.playlist-title, .playlist-song-count{
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.playlist-author{
+    font-weight: normal;
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.playlist-like-btn{
+    margin-left: auto;
 }
 
 .playlist-all--list{
     display: grid;
     grid: auto / 1fr 1fr 1fr;
     grid-gap: 15px;
+    padding: 5% 3%;
+}
+
+.playlist-form *{
+    font-family: "helvetica neue";
 }

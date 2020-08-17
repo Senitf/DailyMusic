@@ -3,6 +3,7 @@
 {% block content %}
 <script>
     $(window).resize(function(){
+        $('.playlist-cover').width() = $('.playlist-info').width() + 10;
         $('.playlist-cover').height($('.playlist-cover').width());
     });
 </script>
