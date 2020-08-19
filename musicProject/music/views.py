@@ -37,7 +37,7 @@ class MusicList(ListView):
 class MusicCreate(CreateView):
     model = Music
     fields = ['title', 'artist', 'album_title', 'image']
-    template_name_suffix = '_create'
+    template_name_suffix = '_createMusic'
     success_url = '/'
 
     def form_valid(self, form):
@@ -187,13 +187,12 @@ class PlayListLike(View):
 class PlayListCreate(CreateView):
     model = PlayList
     fields = ['title', 'subtitle', 'image']
-    template_name_suffix = '_createPlaylist'
+    template_name = 'music/music_createPlaylist.html'
     success_url = '/'
 
     def form_valid(self, form):
         form.instance.author_id = self.request.user.id
         if form.is_valid():
-            form.instance.video_key_direct = PlayTrailerOnYoutube(form.instance.title, form.instance.artist)
             form.instance.save()
             return redirect('/')
         else:

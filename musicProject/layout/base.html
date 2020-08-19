@@ -20,7 +20,7 @@
             <header>
 
                 <a href="{% url 'music:index' %}" id="home">
-                    <img id="mainlogo" src="../static/pic/logo.PNG">
+                    <img id="mainlogo" src="../../static/pic/logo.PNG">
                 </a>
 
                 <div class="list">
@@ -30,7 +30,7 @@
                         </li>
                         {% if user.is_authenticated %}
                         <li>
-                            <a href="{%url 'music:createMusic' %}">Add</a>
+                            <a href="{%url 'music:createPlaylist' %}">Add</a>
                         </li>
                         {% endif %}
                     </ul>

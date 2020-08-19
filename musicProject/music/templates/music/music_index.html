@@ -10,14 +10,14 @@
         <script src="https://kit.fontawesome.com/d5e63c1e41.js" crossorigin="anonymous"></script>
 
     </head>
-    <body>
+    <body style="background-image: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url(../../static/pic/index--background.jpg); background-size: cover;">
         {% if messages %}
         {% for message in messages %}
         {{message}}
         {% endfor %}
         {% endif %}
-        <div class="base-wrap" style="background-image: url(../../pic/index--background.jpg);">
-            <header class="index--header">
+        <div class="base-wrap">
+            <header class="index--header" style="background-color:  rgba(0, 0, 0, 0); box-shadow: none;">
 
                 <a href="{% url 'music:index' %}" id="home">
                     <img id="mainlogo" src="../static/pic/logo.PNG">
@@ -26,11 +26,11 @@
                 <div class="list">
                     <ul class="navbar">
                         <li>
-                            <a href="{%url 'music:playlist'%}">Playlist</a>
+                            <a href="{%url 'music:playlist'%}" style="color: white;">Playlist</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li>
-                            <a href="{%url 'music:create' %}">Add</a>
+                            <a href="{%url 'music:createMusic' %}" style="color: white;">Add</a>
                         </li>
                         {% endif %}
                     </ul>
@@ -52,15 +52,19 @@
                 </div>
             </header>
 
-            <div class="content--index">
-                <h1>혼자 듣기엔</h1>
-                <h1>너무 아깝다면?</h1>
-                <h6>나만의 플레이리스트 지금 남들과 공유하자!</h6>
-                <div class="main-btn">지금 시작하기</div>
+            <div class="content--index content-area">
+                <div class="index--main-text-area">
+                    <h1 style="opacity: 1;
+                    transform: translateX(0px) translateY(0px);
+                    transition: opacity 1200ms ease 0s, transform 1200ms cubic-bezier(0.215, 0.61, 0.355, 1) 0s;">혼자 듣기엔</h1>
+                    <h1>너무 아깝다면?</h1>
+                    <h6>나만의 플레이리스트 지금 남들과 공유하자!</h6>
+                    <a href="{% url 'music:playlist'%}" style="text-decoration: none; color: #fff;"><div class="main-btn">지금 시작하기</div></a>
+                </div>
+                
             </div>
 
             <div class="footer">
-                this area is footer
             </div>
 
         </div>
