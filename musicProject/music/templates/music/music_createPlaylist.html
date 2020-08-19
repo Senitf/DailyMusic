@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="wrap">
+    <div class='content'>
+        <div class="title">
+            <div class="maintitle">Upload New PlayList</div>
+            <div class="subtitle">새로운 음악은 언제나 환영</div>
+        </div>
+
+        <div class="uploadform">
+            <form method='post' enctype="multipart/form-data" action="">
+            {% csrf_token %}
+            {{form.title}}
+            {{form.subtitle}} 
+            {{form.image}} 
+            <input type="submit" value="제출하기">
+            
+            </form>
+        </div>
+        
+    </div>
+</div>
+{%endblock%}

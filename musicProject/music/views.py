@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import TemplateView
 from django.views.generic.base import View
 from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
@@ -14,6 +15,8 @@ import random
 
 # Create your views here.
 
+class MusicIndex(TemplateView):
+    template_name = 'music/music_index.html'
 
 class MusicList(ListView):
     model = Music
@@ -180,3 +183,18 @@ class PlayListLike(View):
             referer_url = request.META.get('HTTP_REFERER')
             path = urlparse(referer_url).path
             return HttpResponseRedirect(path)
+
+class PlayListCreate(CreateView):
+    model = PlayList
+    fields = ['title', 'subtitle', 'image']
+    template_name_suffix = '_createPlaylist'
+    success_url = '/'
+
+    def form_valid(self, form):
+        form.instance.author_id = self.request.user.id
+        if form.is_valid():
+            form.instance.video_key_direct = PlayTrailerOnYoutube(form.instance.title, form.instance.artist)
+            form.instance.save()
+            return redirect('/')
+        else:
+            return self.render_to_response({'form':form})

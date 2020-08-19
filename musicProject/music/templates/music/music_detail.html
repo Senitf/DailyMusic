@@ -18,8 +18,8 @@
                             <div class="album album--detail">{{ object.album_title }}</div>
                         </div>
                         <div class="footbox-btn">
-                            <a href="{% url 'music:favorite' object.id %}" class="float-left btn-like {%if user in object.favorite.all %} saved {% endif %}"><i class="fas fa-star"></i></a>
-                            <a href="{% url 'music:like' object.id %}" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart"></i></a>
+                            <a href="{% url 'music:favoriteMusic' object.id %}" class="float-left btn-like {%if user in object.favorite.all %} saved {% endif %}"><i class="fas fa-star"></i></a>
+                            <a href="{% url 'music:likeMusic' object.id %}" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart"></i></a>
                         </div>
                     </div>
                         
@@ -41,13 +41,13 @@
 {% endblock %}
 
 
-<a href="{% url 'music:like' object.id %}" class="float-left btn-like {%if user in object.like.all %} active {% endif %}"> like </a>
+<a href="{% url 'music:likeMusic' object.id %}" class="float-left btn-like {%if user in object.like.all %} active {% endif %}"> like </a>
 {% if object.like.all.count %}
 {{object.like.all.count}}
 {% endif %}
 
 
 {% if user == object.author %}
-    <a href="{% url 'music:update' music.id %}">update</a>
-    <a href="{% url 'music:delete' music.id %}">delete</a>
+    <a href="{% url 'music:updateMusic' music.id %}">update</a>
+    <a href="{% url 'music:deleteMusic' music.id %}">delete</a>
 {% endif %}
