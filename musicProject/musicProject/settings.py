@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'music.apps.MusicConfig',
+    'playlist.apps.PlaylistConfig',
     'accounts.apps.AccountsConfig',
     'django.contrib.sites',
     'disqus',
