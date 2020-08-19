@@ -35,6 +35,7 @@ class Music(models.Model):
 class PlayList(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='playlist_user')
     title = models.CharField(max_length=50, blank=True)
+    subtitle = models.CharField(max_length=50, blank=True)
 
     musics = models.ManyToManyField(Music, related_name='playlist', blank=True)
     image = models.ImageField(upload_to=get_file_path_playlist)

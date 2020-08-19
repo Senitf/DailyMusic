@@ -22,14 +22,16 @@
             <div class="sub-title sub-title--today" style="font-size: 12px;">당신은 이 노래가 듣고싶어진다</div>
         </div>
 
-        <div class="playlist-today--form">
+        <div class="playlist-today--form" style="background-image: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3) ), url({{label1.image.url}});">
             <div class="playlist-today--form--head">
-                <div class="playlist-today--form--head--main-title">죠지의 여름밤 감성</div>
+                <div class="playlist-today--form--head--main-title">{{label1.title}}</div>
                 <div class="playlist-today--form--head--like-btn"><i class="fas fa-heart"></i></div>
             </div>
-            <div class="playlist-today--form--sub-title">마음만은 시원해지는 죠지 곡 모음</div>
-            <div class="playlist-today--form--author">grefer</div>
-            <div class="playlist-today--form--number-of-songs"><b>12</b> Songs</div>
+            {% if label1.subtitle != "" %}
+            <div class="playlist-today--form--sub-title">{{label1.subtitle}}</div>
+            {% endif %}
+            <div class="playlist-today--form--author">{{label1.author}}</div>
+            <div class="playlist-today--form--number-of-songs"><b>{{label1.musics.count}} </b>Songs</div>
         </div>
     </div>
 
