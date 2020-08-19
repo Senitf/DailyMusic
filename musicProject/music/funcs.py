@@ -4,6 +4,8 @@ import requests
 import time
 import uuid
 import os
+from uuid import uuid4
+from django.utils import timezone
 
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
@@ -25,7 +27,3 @@ def PlayTrailerOnYoutube(title, artist):
 def get_file_path(instance, filename):
     filename = instance.title + "_" + instance.artist + ".jpeg"
     return os.path.join('album_image/%Y/%m/%d', filename)
-
-def get_file_path_playlist(instance, filename):
-    filename = instance.title + "_" + str(instance.author) + ".jpeg"
-    return os.path.join('playlist_image/%Y/%m/%d', filename)

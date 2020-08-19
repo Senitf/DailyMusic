@@ -15,10 +15,10 @@ import random
 
 # Create your views here.
 
-class MusicIndex(TemplateView):
+class Index(TemplateView):
     template_name = 'music/music_index.html'
 
-class MusicList(ListView):
+class List(ListView):
     model = Music
     template_name_suffix = '_list'
     paginate_by = 5
@@ -28,13 +28,13 @@ class MusicList(ListView):
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get the context
-        context = super(MusicList, self).get_context_data(**kwargs)
+        context = super(List, self).get_context_data(**kwargs)
         # Create any data and add it to the context
         context['count'] = Music.objects.count()
         return context
     
 
-class MusicCreate(CreateView):
+class Create(CreateView):
     model = Music
     fields = ['title', 'artist', 'album_title', 'image']
     template_name_suffix = '_createMusic'
@@ -49,7 +49,7 @@ class MusicCreate(CreateView):
         else:
             return self.render_to_response({'form':form})
 
-class MusicUpdate(UpdateView):
+class Update(UpdateView):
     model = Music
     fields = ['title', 'artist', 'album_title', 'image']
     template_name_suffix = '_update'
@@ -61,9 +61,9 @@ class MusicUpdate(UpdateView):
             messages.warning(request, '수정할 권한이 없다.')
             return HttpResponseRedirect('/')
         else:
-            return super(MusicUpdate, self).dispatch(request, *args, **kwargs)
+            return super(Update, self).dispatch(request, *args, **kwargs)
 
-class MusicDelete(DeleteView):
+class Delete(DeleteView):
     model = Music
     template_name_suffix = '_delete'
     success_url = '/'
@@ -74,13 +74,13 @@ class MusicDelete(DeleteView):
             messages.warning(request, '수정할 권한이 없다.')
             return HttpResponseRedirect('/')
         else:
-            return super(MusicDelete, self).dispatch(request, *args, **kwargs)
+            return super(Delete, self).dispatch(request, *args, **kwargs)
 
-class MusicDetail(DetailView):
+class Detail(DetailView):
     model = Music
     template_name_suffix = '_detail'
 
-class MusicLike(View):
+class Like(View):
     def get(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             return HttpResponseForbidden()
@@ -97,7 +97,7 @@ class MusicLike(View):
             path = urlparse(referer_url).path
             return HttpResponseRedirect(path)
 
-class MusicFavorite(View):
+class Favorite(View):
     def get(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             return HttpResponseForbidden()
@@ -112,7 +112,7 @@ class MusicFavorite(View):
                     music.favorite.add(user)
             return HttpResponseRedirect('/')
 
-class MusicLikeList(ListView):
+class Likelist(ListView):
     model = Music
     template_name = 'music/music_list.html'
 
@@ -120,14 +120,14 @@ class MusicLikeList(ListView):
         if not request.user.is_authenticated:
             messages.warning(request, '로그인을 먼저 하세요')
             return HttpResponseRedirect('/accounts/login/')
-        return super(MusicLikeList,self).dispatch(request, *args, **kwargs)
+        return super(Likelist,self).dispatch(request, *args, **kwargs)
 
     def get_queryset(self):
         user = self.request.user
         queryset = user.like_post.all()
         return queryset
 
-class MusicFavoriteList(ListView):
+class Favoritelist(ListView):
     model = Music
     template_name = 'music/music_list.html'
 
@@ -135,65 +135,9 @@ class MusicFavoriteList(ListView):
         if not request.user.is_authenticated:
             messages.warning(request, '로그인을 먼저 하세요')
             return HttpResponseRedirect('/accounts/login/')
-        return super(MusicFavoriteList,self).dispatch(request, *args, **kwargs)
+        return super(Favoritelist,self).dispatch(request, *args, **kwargs)
 
     def get_queryset(self):
         user = self.request.user
         queryset = user.favorite_post.all()
         return queryset
-
-class MusicPlayList(ListView):
-    model = PlayList
-    template_name = 'music/music_playlist.html'
-
-    def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_authenticated:
-            messages.warning(request, '로그인을 먼저 하세요')
-            return HttpResponseRedirect('/accounts/login/')
-        return super(MusicPlayList,self).dispatch(request, *args, **kwargs)
-    
-    def get_queryset(self):
-        queryset = PlayList.objects.all()
-        return queryset
-
-    def get_context_data(self, **kwargs):
-        # Call the base implementation first to get the context
-        context = super(MusicPlayList, self).get_context_data(**kwargs)
-        # Create any data and add it to the context
-        if(PlayList.objects.count() >= 3):
-            items = random.sample(range(1, PlayList.objects.count() + 1), 3)
-            context['label1'] = PlayList.objects.get(pk=items[0])
-            context['label2'] = PlayList.objects.get(pk=items[1])
-            context['label3'] = PlayList.objects.get(pk=items[2])
-        return context
-
-class PlayListLike(View):
-    def get(self, request, *args, **kwargs):
-        if not request.user.is_authenticated:
-            return HttpResponseForbidden()
-        else:
-            if 'playlist_id' in kwargs:
-                playlist_id = kwargs['playlist_id']
-                playlist = PlayList.objects.get(pk=playlist_id)
-                user = request.user
-                if user in playlist.like.all():
-                    playlist.like.remove(user)
-                else:
-                    playlist.like.add(user)
-            referer_url = request.META.get('HTTP_REFERER')
-            path = urlparse(referer_url).path
-            return HttpResponseRedirect(path)
-
-class PlayListCreate(CreateView):
-    model = PlayList
-    fields = ['title', 'subtitle', 'image']
-    template_name = 'music/music_createPlaylist.html'
-    success_url = '/'
-
-    def form_valid(self, form):
-        form.instance.author_id = self.request.user.id
-        if form.is_valid():
-            form.instance.save()
-            return redirect('/')
-        else:
-            return self.render_to_response({'form':form})

@@ -19,18 +19,18 @@
         <div class="base-wrap">
             <header>
 
-                <a href="{% url 'music:index' %}" id="home">
+                <a href="{% url 'index' %}" id="home">
                     <img id="mainlogo" src="../../static/pic/logo.PNG">
                 </a>
 
                 <div class="list">
                     <ul class="navbar">
                         <li>
-                            <a href="{%url 'music:playlist'%}">Playlist</a>
+                            <a href="{%url 'playlist:list'%}">Playlist</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li>
-                            <a href="{%url 'music:createPlaylist' %}">Add</a>
+                            <a href="{%url 'playlist:create' %}">Add</a>
                         </li>
                         {% endif %}
                     </ul>
