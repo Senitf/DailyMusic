@@ -37,7 +37,7 @@ class List(ListView):
 class Create(CreateView):
     model = Music
     fields = ['title', 'artist', 'album_title', 'image']
-    template_name_suffix = '_createMusic'
+    template_name_suffix = '_create'
     success_url = '/'
 
     def form_valid(self, form):
