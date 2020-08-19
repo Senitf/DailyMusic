@@ -3,11 +3,12 @@
 {% block content %}
 <script>
     $(window).resize(function(){
+        $('.playlist-cover').width() = $('.playlist-info').width() + 10;
         $('.playlist-cover').height($('.playlist-cover').width());
     });
 </script>
 
-<div class="content-main">
+<div class="content-main content-area">
     <div class="title">
         <div class="main-title">Playlists</div>
         <div class="sub-title">숨은 띵곡을 찾아서</div>
@@ -21,24 +22,16 @@
             <div class="sub-title sub-title--today" style="font-size: 12px;">당신은 이 노래가 듣고싶어진다</div>
         </div>
 
-        <div class="playlist-today">
-            {% for PL in object_list %}
-            <div class="playlist-form">
-                <div class="playlist-cover">
-                    <img src="{{ PL.image.url }}" alt="fuck sibal" style="display: block; width: 100%; height: auto;">
-                </div>
-                <div class="playlist-info">
-                    <div class="playlist-title">{{PL.title}}</div>
-                    <div class="playlist-author">{{PL.author}}</div>
-                    <div class="playlist-song-count">{{PL.musics.count}} Songs</div>
-                    <div class="footbox-btn">
-                        <a href="{% url 'music:likeplaylist' PL.id %}" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart"></i>
-                        </a>
-                    </div>
-                    <div class="playlist-like-btn">♡</div>
-                </div>
+        <div class="playlist-today--form" style="background-image: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3) ), url({{label1.image.url}});">
+            <div class="playlist-today--form--head">
+                <div class="playlist-today--form--head--main-title">{{label1.title}}</div>
+                <div class="playlist-today--form--head--like-btn"><i class="fas fa-heart"></i></div>
             </div>
-            {% endfor %}
+            {% if label1.subtitle != "" %}
+            <div class="playlist-today--form--sub-title">{{label1.subtitle}}</div>
+            {% endif %}
+            <div class="playlist-today--form--author">{{label1.author}}</div>
+            <div class="playlist-today--form--number-of-songs"><b>{{label1.musics.count}} </b>Songs</div>
         </div>
     </div>
 
@@ -48,18 +41,24 @@
             <div class="sub-title sub-title--playlists-all">오늘은 어떤 띵곡을 만나게 될까?</div>
         </div>
 
-        <div class="playlists-all--list">
-            <div class="playlist-form playlist-form--small">
-                <div class="playlist-cover--small">
-                    <img src="" alt="">
+        <div class="playlist-all--list">
+            {% for PL in object_list %}
+            <div class="playlist-form">
+                <div class="playlist-cover">
+                    <img src="{{ PL.image.url }}" alt="fuck sibal" style="display: block; width: 100%; height: auto;">
                 </div>
-                <div class="playlist-info--small">
-                    <div class="playlist-title--small"></div>
-                    <div class="playlist-author--small"></div>
-                    <div class="playlist-song-count--small"></div>
-                    <div class="playlist-like-btn--small"></div>
+                <div class="playlist-info">
+                    <div class="playlist-title">{{PL.title}}</div>
+                    <div class="playlist-author">{{PL.author}}</div>
+                    <div class="playlist-song-count">{{PL.musics.count}} Songs</div>
+                    <div class="footbox-btn playlist-like-btn">
+                        <a href="{% url 'music:likeplaylist' PL.id %}" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+        
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 </div>

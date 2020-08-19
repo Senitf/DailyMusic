@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class='content-area content-main'>
+        <div class="title">
+            <div class="main-title">Upload New PlayList</div>
+            <div class="sub-title">새로운 음악은 언제나 환영</div>
+        </div>
+
+        <hr style="width: 100%; border: 0; height: 1px; background-color: black;">
+
+        
+        <div class="playlist-today--form" style="background-image: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3) );">
+            <div class="playlist-today--form--head">
+                <div class="playlist-today--form--head--main-title">플레이리스트</div>
+                <div class="playlist-today--form--head--like-btn"><i class="fas fa-heart"></i></div>
+            </div>
+            {% if label1.subtitle != "" %}
+            <div class="playlist-today--form--sub-title">플레이리스트 설명</div>
+            {% endif %}
+            <div class="playlist-today--form--author">{{user.username}}</div>
+            <div class="playlist-today--form--number-of-songs"></div>
+        </div>
+
+        <div class="uploadform">
+            <form method='post' enctype="multipart/form-data" action="">
+            {% csrf_token %}
+            플레이리스트 제목
+            {{form.title}}
+            설명
+            {{form.subtitle}}
+            사진
+            {{form.image}} 
+            <input type="submit" value="제출하기">
+            
+            </form>
+        </div>
+        
+</div>
+
+<script>
+    $("#id_title").on("change keyup paste input", function(){
+        var currentval = $(this).val();
+        if(currentval == ''){
+            $(".playlist-today--form--head--main-title").text("플레이리스트")
+            console.log('sibal')
+        }
+        else {$(".playlist-today--form--head--main-title").text(currentval);}
+    })
+
+    $("#id_subtitle").on("change keyup paste input", function(){
+        var currentval = $(this).val();
+        if(currentval == ''){
+            $(".playlist-today--form--sub-title").text("플레이리스트 설명")
+            console.log('sibal')
+        }
+        else {$(".playlist-today--form--sub-title").text(currentval);}
+    })
+
+    
+
+    function readInputFile(input) {
+        if(input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var path=e.target.result;
+                path = "linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3) ), url(" + path + ")";
+                $('.playlist-today--form').css(
+                    {
+                        'background':path, 
+                        'background-size':'cover', 
+                        'background-position':'center'
+                    }
+                );
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+ 
+    $("#id_image").on('change', function(){
+        readInputFile(this);
+    });
+</script>
+
+{%endblock%}

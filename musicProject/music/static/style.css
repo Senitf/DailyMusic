@@ -1,5 +1,5 @@
 :root{
-    --main-background-color: aliceblue;
+    --main-background-color: wh;
     --main-text-color: rgb(31, 34, 31);
     --sub-title-color: gray;
     --background-color: rgb(92, 125, 175);
@@ -85,12 +85,6 @@ body{
     flex-direction: column;
     height: auto;
     background-color: var(--background-color);
-    border-radius: 10px;
-}
-
-img{
-    width: 100%;
-    height: 85px;
     border-radius: 10px;
 }
 
@@ -213,7 +207,7 @@ input::placeholder{
     background-color: var(--button-hover-color);
 }
 
-.sidebar > a > svg, #Nightmode, i{
+.sidebar > a > svg, #Nightmode{
     width: 30px;
     height: 30px;
     fill: aliceblue;
@@ -396,6 +390,10 @@ table{
     color: goldenrod;
 }
 
+body{
+    overflow: visible;
+}
+
 form{
     display: grid;
 }
@@ -404,29 +402,117 @@ form{
     display: flex;
     flex-direction: column;
     height: 75px;
-    position: fixed;
     width: 100%;
 }
 
 header{
     display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: white;
+    position: fixed;
     height: 75px;
-
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px -6px 6px 7px grey;
+    z-index: 99;
 }
 
-img{
+.navbar{
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar li{
+    padding: 8px 12px;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+.navbar li > a{
+    text-decoration:none;
+    color: var(--main-text-color);
+}
+
+.footer{
+    width: 50px;
+}
+
+img#mainlogo{
     height: 75px;
     width: 75px;
 }
 
-.login-button, .list{
+.list{
     margin-left: auto;
+    margin-right: 20px;
+}
+
+.login-button{
+    font-family: "helvetica neue";
+    font-weight: bolder;
+    padding: 7px 20px;
+    background-color: rgb(31, 34, 31);
+    border-radius: 1em;
+    text-decoration: none;
+    color: black;
+    transition: background-color ease 0.3s;
+}
+
+.login-button:hover{
+    background-color: rgb(67, 73, 67);
+}
+
+.login-button a{
+    text-align: center;
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
 }
 
 .content-main{
     display: grid;
+    position: relative;
     grid-template-rows: 55px auto auto;
     padding: 40px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.content-area{
+    margin-top: 75px;
+}
+
+.index--main-text-area{
+    color: white;
+    position: relative;
+    top: 40%;
+    margin-left: 20px;
+}
+
+h1{
+    font-size: 95px;
+    margin: 10px;
+}
+
+h6{
+    font-size: 20px;
+    margin: 10px;
+    margin-top: 15px;
+    font-weight: lighter;
+}
+
+.main-btn{
+    margin: 40px 10px;
+    padding: 15px 30px;
+    width: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #1e9ed6;
+    text-align: center;
 }
 
 .title{
@@ -450,26 +536,104 @@ img{
     color: var(--sub-title-color);
 }
 
-.playlist-today{
+.today-pick, .playlists-all{
+    padding: 0 2.5%;
+}
+
+.playlist-today--form{
     display: grid;
-    grid: 1fr / 1fr 1fr 1fr;
-    margin: 20px 80px;
-    grid-gap: 5%;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 10px;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 15px;
+    padding: 25px;
+    background-size: cover;
+    background-position: center;
+}
+
+.playlist-today--form--head{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.playlist-today--form--head--main-title{
+    font-size: 35px;
+    font-weight: bolder;
+    color: white;
+}
+
+.playlist-today--form--head--like-btn{
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: 10px;
+    color: white;
+}
+
+.playlist-today--form--sub-title{
+    color: lightgray;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.playlist-today--form--author{
+    font-weight: lighter;
+    font-size: 12px;
+    color: whitesmoke;
+}
+
+.playlist-today--form--number-of-songs{
+    margin-left: auto;
+    color: white;
+    margin-top: 175px;
+    font-size: 25px;
+    font-weight: lighter;
 }
 
 .playlist-cover{
     width: 100%;
-    border: 1px solid black;
+
 }
 
 .playlist-info{
+    box-sizing: border-box;
     display: grid;
     grid: auto / 1fr 10%;
-    border: 1px solid gray;
+    border: 2px solid lightgray;
+    border-top: none;
     width: 100%;
+    padding: 3%;
 }
+
 
 .playlist-title, .playlist-author{
     grid-column: span 2;
 }
 
+.playlist-title, .playlist-song-count{
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.playlist-author{
+    font-weight: normal;
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.playlist-like-btn{
+    margin-left: auto;
+}
+
+.playlist-all--list{
+    display: grid;
+    grid: auto / 1fr 1fr 1fr;
+    grid-gap: 15px;
+    padding: 5% 3%;
+}
+
+.playlist-form *{
+    font-family: "helvetica neue";
+}
