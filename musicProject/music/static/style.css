@@ -443,6 +443,28 @@ img#mainlogo{
     margin-left: auto;
 }
 
+.login-button{
+    font-family: "helvetica neue";
+    font-weight: bolder;
+    padding: 7px 20px;
+    background-color: rgb(31, 34, 31);
+    border-radius: 1em;
+    text-decoration: none;
+    color: black;
+    transition: background-color ease 0.3s;
+}
+
+.login-button:hover{
+    background-color: rgb(67, 73, 67);
+}
+
+.login-button a{
+    text-align: center;
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+}
+
 .content-main{
     display: grid;
     position: relative;
@@ -485,7 +507,6 @@ img#mainlogo{
     margin: 20px auto;
     border-radius: 15px;
     padding: 25px;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3) ), url(/static/pic/testcover.jpeg);
     background-size: cover;
     background-position: center;
 }
