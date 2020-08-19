@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko-kr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main</title>
+        <link rel="stylesheet" href="../../../static/style.css?{% now "U" %}">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="https://kit.fontawesome.com/d5e63c1e41.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        {% if messages %}
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        {% endif %}
+        <div class="base-wrap" style="background-image: url(../../pic/index--background.jpg);">
+            <header class="index--header">
+
+                <a href="{% url 'music:index' %}" id="home">
+                    <img id="mainlogo" src="../static/pic/logo.PNG">
+                </a>
+
+                <div class="list">
+                    <ul class="navbar">
+                        <li>
+                            <a href="{%url 'music:playlist'%}">Playlist</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li>
+                            <a href="{%url 'music:create' %}">Add</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                
+                <div class="login-button">
+                    {% if user.is_authenticated %}
+                    <a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}">
+                        Sign-Out
+                    </a>
+                    <form id="logout" method="POST" action="{% url 'accounts:logout' %}">
+                        {% csrf_token %} <input type="hidden" />
+                    </form>
+                    {% else %}
+                    <a href="{% url 'accounts:login' %}">
+                        Sign-in
+                    </a>
+                    {% endif %}
+                </div>
+            </header>
+
+            <div class="content--index">
+                <h1>혼자 듣기엔</h1>
+                <h1>너무 아깝다면?</h1>
+                <h6>나만의 플레이리스트 지금 남들과 공유하자!</h6>
+                <div class="main-btn">지금 시작하기</div>
+            </div>
+
+            <div class="footer">
+                this area is footer
+            </div>
+
+        </div>
+        
+        <script>
+            function menuOpen(){
+                document.getElementById("sidebar").style.display = "block";
+            }
+
+            function menuClose(){
+                document.getElementById("sidebar").style.display = "none";
+            }
+        </script>
+        <script src="../../static/darkmode.js?{% now "U" %}"></script>
+        
+    </body>
+</html>
