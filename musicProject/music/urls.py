@@ -13,7 +13,7 @@ urlpatterns = [
     path("favorite/", MusicFavoriteList.as_view(), name="favorite_listMusic"),
     path("playlist/", MusicPlayList.as_view(), name="playlist"),
     path("likeplaylist/<int:playlist_id>/", PlayListLike.as_view(), name ="likeplaylist"),
-    path('create/playlist/', PlayListCreate.as_view(), name="createPlaylist"),
+    path("create/playlist/", PlayListCreate.as_view(), name="createPlaylist"),
     path("list/music/", MusicList.as_view(), name="listMusic"),
     path("", MusicIndex.as_view(), name="index"),
 ]

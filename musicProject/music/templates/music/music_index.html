@@ -1,1 +1,84 @@
-tq
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko-kr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main</title>
+        <link rel="stylesheet" href="../../../static/style.css?{% now "U" %}">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="https://kit.fontawesome.com/d5e63c1e41.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body style="background-image: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url(../../static/pic/index--background.jpg); background-size: cover;">
+        {% if messages %}
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        {% endif %}
+        <div class="base-wrap">
+            <header class="index--header" style="background-color:  rgba(0, 0, 0, 0); box-shadow: none;">
+
+                <a href="{% url 'music:index' %}" id="home">
+                    <img id="mainlogo" src="../static/pic/logo.PNG">
+                </a>
+
+                <div class="list">
+                    <ul class="navbar">
+                        <li>
+                            <a href="{%url 'music:playlist'%}" style="color: white;">Playlist</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li>
+                            <a href="{%url 'music:createMusic' %}" style="color: white;">Add</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                
+                <div class="login-button">
+                    {% if user.is_authenticated %}
+                    <a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}">
+                        Sign-Out
+                    </a>
+                    <form id="logout" method="POST" action="{% url 'accounts:logout' %}">
+                        {% csrf_token %} <input type="hidden" />
+                    </form>
+                    {% else %}
+                    <a href="{% url 'accounts:login' %}">
+                        Sign-in
+                    </a>
+                    {% endif %}
+                </div>
+            </header>
+
+            <div class="content--index content-area">
+                <div class="index--main-text-area">
+                    <h1 style="opacity: 1;
+                    transform: translateX(0px) translateY(0px);
+                    transition: opacity 1200ms ease 0s, transform 1200ms cubic-bezier(0.215, 0.61, 0.355, 1) 0s;">혼자 듣기엔</h1>
+                    <h1>너무 아깝다면?</h1>
+                    <h6>나만의 플레이리스트 지금 남들과 공유하자!</h6>
+                    <a href="{% url 'music:playlist'%}" style="text-decoration: none; color: #fff;"><div class="main-btn">지금 시작하기</div></a>
+                </div>
+                
+            </div>
+
+            <div class="footer">
+            </div>
+
+        </div>
+        
+        <script>
+            function menuOpen(){
+                document.getElementById("sidebar").style.display = "block";
+            }
+
+            function menuClose(){
+                document.getElementById("sidebar").style.display = "none";
+            }
+        </script>
+        <script src="../../static/darkmode.js?{% now "U" %}"></script>
+        
+    </body>
+</html>

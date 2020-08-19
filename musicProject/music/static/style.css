@@ -1,5 +1,5 @@
 :root{
-    --main-background-color: aliceblue;
+    --main-background-color: wh;
     --main-text-color: rgb(31, 34, 31);
     --sub-title-color: gray;
     --background-color: rgb(92, 125, 175);
@@ -407,10 +407,16 @@ form{
 
 header{
     display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: white;
+    position: fixed;
     height: 75px;
     padding: 0 20px;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px -6px 6px 7px grey;
+    z-index: 99;
 }
 
 .navbar{
@@ -439,8 +445,9 @@ img#mainlogo{
     width: 75px;
 }
 
-.login-button, .list{
+.list{
     margin-left: auto;
+    margin-right: 20px;
 }
 
 .login-button{
@@ -472,6 +479,40 @@ img#mainlogo{
     padding: 40px;
     width: 75%;
     margin: 0 auto;
+}
+
+.content-area{
+    margin-top: 75px;
+}
+
+.index--main-text-area{
+    color: white;
+    position: relative;
+    top: 40%;
+    margin-left: 20px;
+}
+
+h1{
+    font-size: 95px;
+    margin: 10px;
+}
+
+h6{
+    font-size: 20px;
+    margin: 10px;
+    margin-top: 15px;
+    font-weight: lighter;
+}
+
+.main-btn{
+    margin: 40px 10px;
+    padding: 15px 30px;
+    width: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #1e9ed6;
+    text-align: center;
 }
 
 .title{
