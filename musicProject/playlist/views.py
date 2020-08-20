@@ -69,3 +69,7 @@ class Create(CreateView):
             return redirect('/')
         else:
             return self.render_to_response({'form':form})
+
+class Detail(DetailView):
+    model = Music
+    template_name_suffix = '_detail'
