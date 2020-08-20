@@ -18,7 +18,7 @@
                             <div class="album album--detail">{{ object.album_title }}</div>
                         </div>
                         <div class="footbox-btn">
-                            <a href="{% url 'music:favoriteMusic' object.id %}" class="float-left btn-like {%if user in object.favorite.all %} saved {% endif %}"><i class="fas fa-star"></i></a>
+                            <!--<a href="{% url 'music:favoriteMusic' object.id %}" class="float-left btn-like {%if user in object.favorite.all %} saved {% endif %}"><i class="fas fa-star"></i></a>-->
                             <a href="{% url 'music:likeMusic' object.id %}" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart"></i></a>
                         </div>
                     </div>

@@ -48,7 +48,7 @@
                     <img src="{{ PL.image.url }}" alt="fuck sibal" style="display: block; width: 100%; height: auto;">
                 </div>
                 <div class="playlist-info">
-                    <div class="playlist-title">{{PL.title}}</div>
+                    <a class="playlist-title" href="{% url 'playlist:detail' PL.id %}">{{PL.title}}</a>
                     <div class="playlist-author">{{PL.author}}</div>
                     <div class="playlist-song-count">{{PL.musics.count}} Songs</div>
                     <div class="footbox-btn playlist-like-btn">
