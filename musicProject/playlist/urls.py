@@ -6,6 +6,7 @@ urlpatterns = [
     path("list/", List.as_view(), name="list"),
     path("like/<int:playlist_id>/", Like.as_view(), name ="like"),
     path("create/", Create.as_view(), name="create"),
+    path("detail/<int:pk>/", Detail.as_view(), name="detail"),
 ]
 
 from django.conf.urls.static import static
