@@ -71,5 +71,5 @@ class Create(CreateView):
             return self.render_to_response({'form':form})
 
 class Detail(DetailView):
-    model = Music
+    model = PlayList
     template_name_suffix = '_detail'
