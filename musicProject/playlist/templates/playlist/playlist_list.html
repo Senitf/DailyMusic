@@ -45,7 +45,7 @@
             {% for PL in object_list %}
             <div class="playlist-form">
                 <div class="playlist-cover">
-                    <img src="{{ PL.image.url }}" alt="fuck sibal" style="display: block; width: 100%; height: auto;">
+                    <img src="{{ PL.image.url }}" style="display: block; width: 100%; height: auto;">
                 </div>
                 <div class="playlist-info">
                     <a class="playlist-title" href="{% url 'playlist:detail' PL.id %}">{{PL.title}}</a>
@@ -62,7 +62,4 @@
         </div>
     </div>
 </div>
-
-
-
 {% endblock %}
