@@ -11,7 +11,7 @@ class PlayList(models.Model):
     title = models.CharField(max_length=50, blank=True)
     subtitle = models.CharField(max_length=50, blank=True)
 
-    musics = models.ManyToManyField(Music, related_name='playlist', blank=True)
+    musics = models.ManyToManyField(Music, related_name='musics', blank=True)
     image = models.ImageField(upload_to=get_file_path)
 
     created = models.DateTimeField(auto_now_add=True)
@@ -27,4 +27,4 @@ class PlayList(models.Model):
         ordering = ['-created']
     
     def get_absolute_url(self):
-        return reverse("music:playlist", args=[self.id])
+        return reverse("playlist:detail", args=[self.id])
