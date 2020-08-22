@@ -48,7 +48,9 @@ playlist model fixed <br>
 fix music_playlist.html <br>
 playlist model fix <br>
 
-20/08/19 <br>
+20/08/23 <br>
+playlist_detail.html created & fix detail <br>
+fix playlist_image bug <br>
 
 --
 
