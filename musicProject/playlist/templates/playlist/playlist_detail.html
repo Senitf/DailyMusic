@@ -18,7 +18,7 @@
             </div>
             <div class="playlist--detail--info--author" style="margin-top: 20px;">{{  object.author }}</div>
             <div class="playlist--detail--info--like">
-                <div class="playlist--detail--info--like--like-btn"><a href="#" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart"></i>
+                <div class="playlist--detail--info--like--like-btn"><a href="{% url 'playlist:like' object.id %}" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart"></i>
                 </a></div>
                 <div class="playlist--detail--info--like--count">{{ object.like.count }}</div>
             </div>
@@ -45,7 +45,7 @@
                     <div class="playlist-detail--songs--list--form--info--artist" style="margin-bottom: 10px;">{{ music.artist }}</div>
                 </div>
                 <div class="playlist-detail--songs--list--form--album">{{ music.album_title }}</div>
-                <div class="playlist-detail--songs--list--form--like-btn" style="margin: auto 0 auto auto; "><a href="#" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart" style="font-size: 30px;"></i>
+                <div class="playlist-detail--songs--list--form--like-btn" style="margin: auto 0 auto auto; "><a href="{% url 'music:like' music.id %}" class="float-left btn-like {% if user in music.like.all %} liked {% endif %}"><i class="fas fa-heart" style="font-size: 30px;"></i>
                 </a>
                 </div>
             </div>
