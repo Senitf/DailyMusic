@@ -1,44 +1,78 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="content-main">
+<div class="content-main content-area">
     <div class="title">
         <div class="main-title">Playlist</div>
         <div class="sub-title">여기엔 어떤 노래들이 있을까?</div>
     </div>
 
     <div class="playlist-detail--info">
-        <div class="playlist-detail--cover">
-            <img src="" alt="">
+        <div class="playlist-detail--cover" style="height: 210px;">
+            <img src="r001-021.jpg" alt="">
         </div>
         <div class="playlist--detail--info">
             <div class="playlist--detail--info--title">
-                <div class="main-title playlist--detail--info--main-title"></div>
-                <div class="sub-title playlist--detail info--sub-title"></div>
+                <div class="main-title playlist--detail--info--main-title">TestPlayListTitle</div>
+                <div class="sub-title playlist--detail info--sub-title" style="margin-top: 10px;">This is test. This is test</div>
             </div>
-            <div class="playlist--detail--info--author"></div>
+            <div class="playlist--detail--info--author" style="margin-top: 20px;">AuthorNo.1</div>
             <div class="playlist--detail--info--like">
-                <div class="playlist--detail--info--like--like-btn"></div>
-                <div class="playlist--detail--info--like--count"></div>
+                <div class="playlist--detail--info--like--like-btn"><a href="#" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart"></i>
+                </a></div>
+                <div class="playlist--detail--info--like--count">3,333</div>
             </div>
         </div>
     </div>
 
     <div class="playlist-detail--songs">
-        <div class="playlist-detail--songs--count"></div>
-        <div class="playlist-detail--songs-index"></div>
+        <div class="playlist-detail--songs--count" style="font-size: 25px; margin-bottom: 50px;">XX Songs</div>
+        <div class="playlist-detail--songs-index">
+            <div></div>
+            <div class="playlist-detail--songs-index-title_artist">Title / Artist</div>
+            <div class="playlist-detail--songs-index-album">Album</div>
+            <div class="playlist-detail--songs-index-like_btn" style="margin-left: auto;">Like</div>
+        </div>
         <hr>
         <div class="playlist-detail--songs--list">
             <div class="playlist-detail--songs--list--form">
-                <div class="playlist-detail-songs--list--form--cover">
+                <div class="playlist-detail-songs--list--form--cover" style="background-color: antiquewhite; height: 100px;">
                     <img src="" alt="">
                 </div>
                 <div class="playlist-detail--songs--list--form--info">
-                    <div class="playlist-detail--songs--list--form--info--title"></div>
-                    <div class="playlist-detail--songs--list--form--info--artist"></div>
+                    <div class="playlist-detail--songs--list--form--info--title">JustSongTitle</div>
+                    <div class="playlist-detail--songs--list--form--info--artist" style="margin-bottom: 10px;">iamnotartist</div>
                 </div>
-                <div class="playlist-detail--songs--list--form--album"></div>
-                <div class="playlist-detail--songs--list--form--like-btn"></div>
+                <div class="playlist-detail--songs--list--form--album">albumnameisnotimportant</div>
+                <div class="playlist-detail--songs--list--form--like-btn" style="margin: auto 0 auto auto; "><a href="#" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart" style="font-size: 30px;"></i>
+                </a>
+                </div>
+            </div>
+            <div class="playlist-detail--songs--list--form">
+                <div class="playlist-detail-songs--list--form--cover" style="background-color: antiquewhite; height: 100px;">
+                    <img src="" alt="">
+                </div>
+                <div class="playlist-detail--songs--list--form--info">
+                    <div class="playlist-detail--songs--list--form--info--title">JustSongTitle</div>
+                    <div class="playlist-detail--songs--list--form--info--artist" style="margin-bottom: 10px;">iamnotartist</div>
+                </div>
+                <div class="playlist-detail--songs--list--form--album">albumnameisnotimportant</div>
+                <div class="playlist-detail--songs--list--form--like-btn" style="margin: auto 0 auto auto; "><a href="#" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart" style="font-size: 30px;"></i>
+                </a>
+                </div>
+            </div>
+            <div class="playlist-detail--songs--list--form">
+                <div class="playlist-detail-songs--list--form--cover" style="background-color: antiquewhite; height: 100px;">
+                    <img src="" alt="">
+                </div>
+                <div class="playlist-detail--songs--list--form--info">
+                    <div class="playlist-detail--songs--list--form--info--title">JustSongTitle</div>
+                    <div class="playlist-detail--songs--list--form--info--artist" style="margin-bottom: 10px;">iamnotartist</div>
+                </div>
+                <div class="playlist-detail--songs--list--form--album">albumnameisnotimportant</div>
+                <div class="playlist-detail--songs--list--form--like-btn" style="margin: auto 0 auto auto; "><a href="#" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart" style="font-size: 30px;"></i>
+                </a>
+                </div>
             </div>
         </div>
     </div>

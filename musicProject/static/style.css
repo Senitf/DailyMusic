@@ -637,3 +637,8 @@ h6{
 .playlist-form *{
     font-family: "helvetica neue";
 }
+
+.playlist-detail--info{
+    display: grid;
+    grid-template-rows: 150px 1fr;
+}
