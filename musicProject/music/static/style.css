@@ -634,6 +634,56 @@ h6{
     padding: 5% 3%;
 }
 
-.playlist-form *{
+.playlist-form *, .playlist-detail--songs *{
     font-family: "helvetica neue";
+}
+
+.playlist-detail--songs{
+    margin-top: 100px;
+}
+
+.playlist-detail--info{
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    border: 1pt solid rgb(179, 179, 179);
+}
+
+.playlist-detail--cover{
+    background-color: gainsboro;
+}
+
+.playlist--detail--info{
+    margin: 20px 0px 20px 20px;
+}
+
+.playlist--detail--info--like{
+    display: flex;
+    margin-top: 50px;
+}
+
+.playlist-detail--songs-index, .playlist-detail--songs--count{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.playlist-detail--songs-index, .playlist-detail--songs--list--form{
+    display: grid;
+    grid-template-columns: 100px 8fr 5fr 1fr;
+    grid-gap: 15px;
+    margin: 20px 10px;
+    margin-right: 15px;
+}
+
+.playlist-detail--songs--list--form--info--title{
+    font-size: 25pt;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.playlist-detail--songs--list--form--album, .playlist-detail--songs--list--form--info{
+    margin: auto 0;
+}
+
+.playlist-detail--songs--list--form--album{
+    font-size: 18px;
 }
