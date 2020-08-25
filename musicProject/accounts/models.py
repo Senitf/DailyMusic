@@ -12,4 +12,4 @@ class MusicUser(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     nickname = models.CharField(max_length=50, blank=True)
-    profile_image = models.ImageField(upload_to=get_file_path, default='accounts/profile_images/default_image/default.jpeg')
+    profile_image = models.ImageField(upload_to=get_file_path, default='default_image/default.jpeg')

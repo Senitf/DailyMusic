@@ -141,3 +141,5 @@ SITE_ID = 1
 DISQUS_API_SECRET = 'QsWZP2dIlOhDSEbPkghYKMEs28xYSxO4v4eWqbPcLcnNU36riU52Puwr66A9NmF0'
 DISQUS_API_KEY = 'YeuD4TzsviFaYsl3IQZ6zZ20qnKqqZtBra8dope06ViAc0HpHVNSmgBdkccla30e'
 DISQUS_WEBSITE_SHORTNAME = 'https-github-com-senitf-dailymusic'
+
+AUTH_PROFILE_MODULE = 'accounts.MusicUser'

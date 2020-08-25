@@ -20,17 +20,19 @@
             <header>
 
                 <a href="{% url 'index' %}" id="home">
+                    <!---
                     <img id="mainlogo" src="../../static/pic/logo.PNG">
+                    -->
+                    <img id="mainlogo" src="{{ user.MusicUser.profile_image.url }}">
                 </a>
-
                 <div class="list">
                     <ul class="navbar">
                         <li>
-                            <a href="{%url 'playlist:list'%}">Playlist</a>
+                            <a href="{% url 'playlist:list'%}">Playlist</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li>
-                            <a href="{%url 'playlist:create' %}">Add</a>
+                            <a href="{% url 'playlist:create' %}">Add</a>
                         </li>
                         {% endif %}
                     </ul>
