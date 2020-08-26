@@ -17,8 +17,8 @@
 * Website: https://github.com/Senitf
 * Github: [@Senitf, S-J-Kim](https://github.com/Senitf, S-J-Kim)
 
-## About (Service name)
-(Service name)은 플레이리스트를 공유하는 음악 SNS입니다. <br><br>
+## About DailyMusic
+DailyMusic은 플레이리스트를 공유하는 음악 SNS입니다. <br><br>
 평상시 여러분이 즐겨듣는 노래들이 있나요? 당신만의 플레이리스트, 혼자서만 듣기엔 너무 아쉽다면? 지금 다른 사람들과 공유해 보세요!<br><br>
 자신만의 플레이스트를 생성하고 노래를 추가해 보세요. <br>
 다른 사람들의 플레이리스트를 탐험해보세요. <br>
