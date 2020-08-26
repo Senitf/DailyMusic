@@ -33,7 +33,7 @@ Playlist. 수많은 이용자들이 공유한 플레이리스트들을 확인할
 <img src="https://user-images.githubusercontent.com/30287999/91279548-98b5a680-e7c0-11ea-8d28-3c0283d99afc.png">
 Playlist 상세 페이지. 어떤 곡들이 포함되어 있는지 확인하세요. <br>
 <img src="https://user-images.githubusercontent.com/30287999/91279691-c995db80-e7c0-11ea-9fcc-0a48986b7aba.png">
-Music detail page. 개별 곡들에 대해 유튜브 영상을 제공하여 음악을 감상할 수 있습니다. <br>
+Music detail page. 개별 곡들에 대해 DailyMusic에서 자동으로 유튜브 영상을 제공하며 빠르게 감상할 수 있습니다. <br>
 <img src="https://user-images.githubusercontent.com/30287999/91279725-d4e90700-e7c0-11ea-92e3-e84dbe7c2460.png">
 
 
