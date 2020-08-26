@@ -9,7 +9,7 @@
 
     <div class="playlist-detail--info">
         <div class="playlist-detail--cover" style="height: 210px;">
-            <img src="{{ object.image.url }}" alt="">
+            <img class="cover" src="{{ object.image.url }}" alt="">
         </div>
         <div class="playlist--detail--info">
             <div class="playlist--detail--info--title">
@@ -37,7 +37,7 @@
             {% for music in object.musics.all %}
             <div class="playlist-detail--songs--list--form">
                 <div class="playlist-detail-songs--list--form--cover" style="background-color: antiquewhite; height: 100px;">
-                    <img src="{{ music.image.url }}" alt="">
+                    <img class="cover" src="{{ music.image.url }}" alt="">
                 </div>
                 <div class="playlist-detail--songs--list--form--info">
                     <div class="playlist-detail--songs--list--form--info--title">{{ music.title }}</div>
