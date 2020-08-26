@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to DailyMusic 👋</h1>
+<h1 align="center">Welcome to DailyMusic 🎧</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/Senitf/DailyMusic" target="_blank">
@@ -25,21 +25,23 @@ DailyMusic은 플레이리스트를 공유하는 음악 SNS입니다. <br><br>
 나만의 숨은 띵곡을 자랑해 보세요.<br>
 <br>
 
-main page
+main page <br>
 <img src="https://user-images.githubusercontent.com/30287999/91279536-95221f80-e7c0-11ea-9f90-f9695a3b5dbd.png">
-sign-up
+sign-up <br>
 <img src="https://user-images.githubusercontent.com/30287999/91279586-a4a16880-e7c0-11ea-82bb-e3e0e72665be.png">
-Playlist. 공유된 플레이리스트들을 확인할 수 있습니다.
+Playlist. 수많은 이용자들이 공유한 플레이리스트들을 확인할 수 있습니다. 특히, 랜덤하게 3개의 오늘의 플레이리스트를 추천하여 당신의 플레이리스트가 자연스럽게 노출되도록 합니다. <br>
 <img src="https://user-images.githubusercontent.com/30287999/91279548-98b5a680-e7c0-11ea-8d28-3c0283d99afc.png">
-Playlist 상세 페이지. 어떤 곡들이 포함되어 있는지 확인하세요.
+Playlist 상세 페이지. 어떤 곡들이 포함되어 있는지 확인하세요. <br>
 <img src="https://user-images.githubusercontent.com/30287999/91279691-c995db80-e7c0-11ea-9fcc-0a48986b7aba.png">
-Music detail page.
+Music detail page. 개별 곡들에 대해 유튜브 영상을 제공하여 음악을 감상할 수 있습니다. <br>
 <img src="https://user-images.githubusercontent.com/30287999/91279725-d4e90700-e7c0-11ea-92e3-e84dbe7c2460.png">
 
 
 ## Features
 
-- Playlist에 음악 Upload시 자동으로 MV YouTube 영상 링크
+- 개별 음악 업로드와 동시에 유튜브 영상 제공
+- 로그인된 사용자에 한하여 여러 이용자들이 업로드한 음악들을 조합하여 플레이리스트 생성 가능
+- 개별 음악과 플레이리스트에 대한 좋아요, 저장 기능
 
 ## Build process
 
