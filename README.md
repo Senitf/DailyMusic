@@ -25,6 +25,18 @@ DailyMusic은 플레이리스트를 공유하는 음악 SNS입니다. <br><br>
 나만의 숨은 띵곡을 자랑해 보세요.<br>
 <br>
 
+main page
+<img src="https://user-images.githubusercontent.com/30287999/91279536-95221f80-e7c0-11ea-9f90-f9695a3b5dbd.png">
+sign-up
+<img src="https://user-images.githubusercontent.com/30287999/91279586-a4a16880-e7c0-11ea-82bb-e3e0e72665be.png">
+Playlist. 공유된 플레이리스트들을 확인할 수 있습니다.
+<img src="https://user-images.githubusercontent.com/30287999/91279548-98b5a680-e7c0-11ea-8d28-3c0283d99afc.png">
+Playlist 상세 페이지. 어떤 곡들이 포함되어 있는지 확인하세요.
+<img src="https://user-images.githubusercontent.com/30287999/91279691-c995db80-e7c0-11ea-9fcc-0a48986b7aba.png">
+Music detail page.
+<img src="https://user-images.githubusercontent.com/30287999/91279725-d4e90700-e7c0-11ea-92e3-e84dbe7c2460.png">
+
+
 ## Features
 
 - Playlist에 음악 Upload시 자동으로 MV YouTube 영상 링크
