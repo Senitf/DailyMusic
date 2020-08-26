@@ -653,7 +653,8 @@ h6{
 }
 
 .playlist--detail--info{
-    margin: 20px 0px 20px 20px;
+    display: grid;
+    margin: 20px;
 }
 
 .cover{
@@ -662,7 +663,7 @@ h6{
 
 .playlist--detail--info--like{
     display: flex;
-    margin-top: 50px;
+    margin-top: auto;
 }
 
 .playlist-detail--songs-index, .playlist-detail--songs--count{
@@ -690,4 +691,8 @@ h6{
 
 .playlist-detail--songs--list--form--album{
     font-size: 18px;
+}
+
+.playlist--detail--info--sub-title{
+    margin-top: 20px;
 }

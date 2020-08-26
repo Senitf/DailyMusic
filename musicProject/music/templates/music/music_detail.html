@@ -2,41 +2,36 @@
 
 {% block content %}
 
-<body>
-    <div class="warp">
-        <div class="content content--detail">
-            <div class="form detail">
-                <div class="cover cover--detail">
-                    <img src="{{ object.image.url }}">
-                </div>
-                <div class="song-template">
-                    
-                    <div class="song-title title--detail">{{ object.title }}</div>
-                    <div class="footbox">
-                        <div class="footbox--info">
-                            <div class="artist artist--detail">{{ object.artist }}</div>
-                            <div class="album album--detail">{{ object.album_title }}</div>
-                        </div>
-                        <div class="footbox-btn">
-                            <!--<a href="{% url 'music:favoriteMusic' object.id %}" class="float-left btn-like {%if user in object.favorite.all %} saved {% endif %}"><i class="fas fa-star"></i></a>-->
-                            <a href="{% url 'music:like' object.id %}" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart"></i></a>
-                        </div>
-                    </div>
-                        
-                    
-                </div>
-            </div>
-            <div class="video">
-                <iframe class="ytplayer" src="{{object.video_key_direct}}" frameborder=0 allowfullscreen></iframe>
-            </div>
-            <div class="disqus">
-                {% load disqus_tags %}
-                {% set_disqus_url post_absolute_url %}
-                {% disqus_show_comments %}
-            </div>
-        </div>
+<div class="content-main content-area">
+    <div class="title">
+        <div class="main-title">Song info</div>
+        <div class="sub-title">여기엔 어떤 노래들이 있을까?</div>
     </div>
-</body>
+        <div class="playlist-detail--info">
+            <div class="playlist-detail--cover" style="height: 210px;">
+                <img class="cover" src="{{ object.image.url }}" alt="">
+            </div>
+            <div class="playlist--detail--info">
+                <div class="main-title playlist--detail--info--main-title">{{  object.title  }}</div>
+                <div class="sub-title playlist--detail--info--sub-title" style="font-size: 25px;">{{  object.artist  }}</div>
+                
+                <div class="playlist--detail--info--like" style="justify-content: space-between;">
+                    <div class="playlist--detail--info--author" >{{  object.album_title }}</div>
+                    <div class="playlist--detail--info--like--like-btn"><a href="{% url 'playlist:like' object.id %}" class="float-left btn-like {%if user in object.like.all %} liked {% endif %}"><i class="fas fa-heart"></i>
+                    </a></div>
+                </div>
+            </div>
+    </div>
+    <div class="video">
+        <iframe class="ytplayer" src="{{object.video_key_direct}}" frameborder=0 allowfullscreen></iframe>
+    </div>
+    <div class="disqus">
+        {% load disqus_tags %}
+        {% set_disqus_url post_absolute_url %}
+        {% disqus_show_comments %}
+    </div>
+</div>
+
 
 {% endblock %}
 
