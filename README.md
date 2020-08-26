@@ -27,7 +27,7 @@ DailyMusic은 플레이리스트를 공유하는 음악 SNS입니다. <br><br>
 
 main page <br>
 <img src="https://user-images.githubusercontent.com/30287999/91279536-95221f80-e7c0-11ea-9f90-f9695a3b5dbd.png">
-sign-up <br>
+sign-up. 간단한 회원 가입을 통해 수많은 음악 추천들을 경험하게 됩니다. <br>
 <img src="https://user-images.githubusercontent.com/30287999/91279586-a4a16880-e7c0-11ea-82bb-e3e0e72665be.png">
 Playlist. 수많은 이용자들이 공유한 플레이리스트들을 확인할 수 있습니다. 특히, 랜덤하게 3개의 오늘의 플레이리스트를 추천하여 당신의 플레이리스트가 자연스럽게 노출되도록 합니다. <br>
 <img src="https://user-images.githubusercontent.com/30287999/91279548-98b5a680-e7c0-11ea-8d28-3c0283d99afc.png">
