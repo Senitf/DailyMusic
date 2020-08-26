@@ -25,11 +25,6 @@ DailyMusic은 플레이리스트를 공유하는 음악 SNS입니다. <br><br>
 나만의 숨은 띵곡을 자랑해 보세요.<br>
 <br>
 
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
 ## Features
 
 - Playlist에 음악 Upload시 자동으로 MV YouTube 영상 링크
@@ -72,7 +67,6 @@ views.py def form to class form
 Updates are will be continued...
 
 
+## Show your support
 
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+Give a ⭐️ if this project helped you!
