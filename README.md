@@ -25,7 +25,7 @@ DailyMusic은 플레이리스트를 공유하는 음악 SNS입니다. <br><br>
 나만의 숨은 띵곡을 자랑해 보세요.<br>
 <br>
 
-> main page <br>
+> main page
 <img src="https://user-images.githubusercontent.com/30287999/91279536-95221f80-e7c0-11ea-9f90-f9695a3b5dbd.png">
 > sign-up. <br>
 간단한 회원 가입을 통해 수많은 음악 추천들을 경험하게 됩니다. <br>
